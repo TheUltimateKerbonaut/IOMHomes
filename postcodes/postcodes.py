@@ -18,3 +18,7 @@ for entry in data:
         
         geocode_result = gmaps.geocode(address)
         entry["geocode"] = geocode_result
+
+file = open("data.json", "w")
+file.write(json.dumps(data, indent=4)) # the indent option makes it have nice formatting - larger file sizes but more human readable
+file.close()

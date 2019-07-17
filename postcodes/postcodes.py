@@ -6,7 +6,7 @@ from time import sleep
 gmaps = googlemaps.Client(key="")
 
 # Load the data
-data_file = open("../initial-processing/data.json", "r")
+data_file = open("../data.json", "r")
 data = {}
 data = json.load(data_file)
 
@@ -14,7 +14,6 @@ for entry in data:
     # If postcode is not present
     if (entry["postcode"] == ""):
 
-        # Get address, query Google, then store result
         address = entry["address"]
         print("Getting data for address {}".format(address))
 

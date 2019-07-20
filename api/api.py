@@ -8,7 +8,7 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 data = {}
-data = json.load(open("data.json", "r"))
+data = json.load(open("../data.json", "r"))
 
 
 @app.route('/', methods=['GET'])
@@ -43,10 +43,10 @@ def home():
         if town != None and entries[i]["town"].lower() != town.lower():
             continue  # Skip current iteration in for loop. Unlike break, continue allows for future loop iterations
 
-        if (entries[i]["market_value"] == "" or price_min != None and float(entries[i]["market_value"]) < float(price_min)):
+        if entries[i]["market_value"] == "" or price_min != None and float(entries[i]["market_value"]) < float(price_min):
             continue
 
-        if (entries[i]["market_value"] == "" or price_max != None and float(entries[i]["market_value"]) > float(price_max)):
+        if entries[i]["market_value"] == "" or price_max != None and float(entries[i]["market_value"]) > float(price_max):
             continue
 
         if acquisition_year != None and year_acquisition != acquisition_year:
@@ -56,6 +56,11 @@ def home():
             continue
 
         correctEntries.append(entries[i])
+
+        # Protect against someone supplying no paremeters and getting all our data
+        # by limiting entries to 100 long!
+        if len(correctEntries) > 100:
+            return "Error: too many results"
 
     return jsonify(correctEntries)
 

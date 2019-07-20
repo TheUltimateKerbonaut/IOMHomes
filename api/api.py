@@ -1,13 +1,11 @@
-from flask import request, jsonify
+import flask
+from flask import request, jsonify, Flask
 
 import json
 import os
+
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-
-@app.route('/', methods=['GET'])
-def home():
-    return jsonify(data)
     
 data = {}
 data = json.load(open("../data.json", "r"))
@@ -40,9 +38,9 @@ def home():
 
     for i in range(0, len(entries)):
         if entries[i]["town"] == town:
-            correctEntries.append(correctEntries)
+            correctEntries.append(entries[i])
 
-    return jsonify(correctEntries)
+    return jsonify(entries)
     # return jsonify(data)
 
 app.run()

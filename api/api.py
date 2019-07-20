@@ -1,12 +1,14 @@
-import flask
 from flask import request, jsonify
 
 import json
 import os
-
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify(data)
+    
 data = {}
 data = json.load(open("../data.json", "r"))
 

@@ -1,0 +1,174 @@
+html
+{
+    scroll-behavior: smooth; /* disabled on search.html for js animation */
+}
+
+body
+{
+    background-color: #f4f7f8;
+}
+
+@media only screen and (max-width: 768px) /* md or smaller */
+{
+    .text-md-center
+    {
+        text-align: center;
+    }
+
+    .md-seperator
+    {
+        width: 100%;
+        margin-top: 7vh;
+        height: 7vh;
+        border-top: 1px solid grey;
+    }
+
+    #searchbar-masthead
+    {
+        margin-top: 7vh;
+        margin-left: 5%;
+        width: 90%;
+        margin-bottom: 10vh;
+    }
+
+    .masthead-index
+    {
+        min-height: 75vh;
+        padding-top: 10vh;
+        background-image: url('../images/iomBackground.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Parallax effect */
+    }
+
+    .masthead-search
+    {
+        min-height: 75vh;
+        padding-top: 10vh;
+        background-image: url('../images/iomBackground2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Parallax effect */
+    }
+
+    .search-button
+    {
+        margin-top: 7vh;
+    }
+
+    select
+    {
+        margin-top: 1.5vh;
+    }
+    
+    .property-image
+    {
+        border-radius: 5%;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2vh;
+    }
+
+}
+
+
+.seperator
+{
+    width: 100%;
+    margin-top: 7vh;
+    height: 7vh;
+    border-top: 1px solid grey;
+}
+
+.progress
+{
+    height: auto;
+    margin-bottom: 1vh;
+    background-color: lightgrey;
+}
+
+.progress-text
+{
+    text-align: left !important;
+    margin-left: 1vw;
+    font-size: 170%;
+}
+
+.display-5
+{
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+
+
+@media only screen and (min-width: 768px) /* lg */
+{
+    .text-md-center
+    {
+        text-align: left !important;
+    }
+
+    #searchbar-masthead
+    {
+        margin-top: 7vh;
+        margin-left: 25%;
+        width: 50%;
+        margin-bottom: 10vh;
+    }
+
+    .masthead-index
+    {
+        min-height: 75vh;
+        padding-top: 20vh;
+        background-image: url('../images/iomBackground.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Parallax effect */
+    }
+
+    .masthead-search
+    {
+        min-height: 75vh;
+        padding-top: 20vh;
+        background-image: url('../images/iomBackground2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Parallax effect */
+    }
+
+    .property-image
+    {
+        border-radius: 5%;
+        width: 100%;
+        height: auto;
+    }
+
+    #search-button-div
+    {
+        margin-top: 7vh;
+        width: 50% !important;
+        margin-left: 25% !important;
+    }
+}
+
+svg
+{
+    width: auto;
+    height: 10vh;
+    
+    display: block;
+    margin: auto;
+
+    margin-top: 5vh;
+}
+
+footer
+{
+    margin-top: 5vh;
+}

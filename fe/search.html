@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: auto;">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="housedata.im - Manx historical property data">
+    <meta name="author" content="seamlesssoftware.im">
+
+    <title>housedata.im - Search</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light navbar-expand-md">
+        <a class="navbar-brand text-white" href="#">Housedata.im</a>
+        <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mr-3">
+                <li class="nav-item">
+                    <a class="text-center nav-link text-white" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="text-center nav-link nav-link-active nav-link-fade text-white" href="#">Search <span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Masthead / Header -->
+    <header class="masthead-index">
+        <div class="container h-100">
+            <div class="row align-items-center text-center h-100">
+                <div class="col-12">
+                    <span id="header-bold" class="display-3 text-white">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </span><br />
+
+                    <div class="md-form" id="searchbar-masthead">
+                        <div class="row">
+
+                            <div class="col-8">
+
+                                <input class="form-control" type="text" placeholder="Search by address, street, etc"
+                                    aria-label="Search">
+
+                            </div>
+
+                            <div class="col-4 pl-0">
+
+                                <button class="w-100 btn btn-primary">Search</button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+
+        <!-- Search section -->
+        <div class="section" id="search">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <p class="lead">Search by address, street, postcode, house name, house number, town, market value,
+                        or parish.</p>
+
+                    <input class="form-control" type="text" placeholder="Search by address, street, etc"
+                        aria-label="Search">
+
+
+                </div>
+
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-md-4">
+
+                    <select class="browser-default custom-select">
+                        <option selected>Town (N/A)</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <select class="browser-default custom-select">
+                        <option selected>Price range (N/A)</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <select class="browser-default custom-select">
+                        <option selected>Year sold (N/A)</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+                <div class="row" id="search-button-div">
+
+                    <div class="col">
+
+                        <button class="search-button w-100 btn btn-primary">Search</button>
+
+                    </div>
+
+                </div>
+
+        </div>
+
+        <!-- Results section -->
+
+        <div class="seperator"></div>
+
+        <div class="section" id="stats">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <p class="display-5 text-md-center">119 Woodbourne Road</p>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <img class="property-image" src="images/map.jpg" />
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <p class="lead text-md-center">Postcode: IM2 3AU</p>
+                            <p class="lead text-md-center">Market value: £999,999</p>
+                            <p class="lead text-md-center">Postcode: IM2 3AU</p>
+                            <p class="lead text-md-center">Market value: £999,999</p>
+                            <p class="lead text-md-center">Postcode: IM2 3AU</p>
+                            <p class="lead text-md-center">Market value: £999,999</p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seperator"></div>
+
+        <div class="section" id="stats">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <p class="display-5 text-md-center">13 Bob Smith Lane</p>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <img class="property-image" src="images/map2.jpg" />
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <p class="lead text-md-center">Postcode: BOB 123</p>
+                            <p class="lead text-md-center">Market value: £123,456</p>
+                            <p class="lead text-md-center">Postcode: BOB 123</p>
+                            <p class="lead text-md-center">Market value: £123,456</p>
+                            <p class="lead text-md-center">Postcode: BOB 132</p>
+                            <p class="lead text-md-center">Market value: £123,456</p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <footer class="text-center">
+        <span>&copy;2019 SeamlessSoftware.im</span>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Not slim because we need jquery(window).load(function()) -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar background colour script -->
+    <script>
+
+		/*
+		$(window).scroll(function () {
+			$('nav').toggleClass('scrolled', $(this).scrollTop() > 700);
+		})
+		*/
+
+    </script>
+
+    <!-- Smooth fading sccript -->
+    <script src="js/fade.js"></script>
+
+
+</body>
+
+</html>

@@ -1,11 +1,46 @@
 import flask
+from flask import request, jsonify
+
+import json
+import os
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
+data = {}
+data = json.load(open("../data.json", "r"))
 
-@app.route('/', methods=['GET'])
+@app.route('/api/', methods=['GET'])
 def home():
-    return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
+
+    # Get entries matching search
+    string = request.args.get('search')
+
+    if (string == None):
+        string = ""
+
+    entries = []
+
+    for entry in data:
+        for row in entry:
+            if (string in entry[row]):
+                entries.append(entry)
+    
+    if (len(entries) == 0):
+        return ""
+
+    # Check if entries match dropdown criteria
+    town = request.args.get('town')
+    price_range = request.args.get('price')
+    year = request.args.get('year')
+
+    correctEntries = []
+
+    for i in range(0, len(entries)):
+        if entries[i]["town"] == town:
+            correctEntries.append(correctEntries)
+
+    return jsonify(correctEntries)
+    # return jsonify(data)
 
 app.run()

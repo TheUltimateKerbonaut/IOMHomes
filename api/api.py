@@ -62,6 +62,9 @@ def home():
         if len(correctEntries) > 100:
             return "Error: too many results"
 
+		if (len(correctEntries) == 0):
+			return "Error: 0 results"
+
     return jsonify(correctEntries)
 
 

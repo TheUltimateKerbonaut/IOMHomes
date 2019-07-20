@@ -57,13 +57,13 @@ def home():
 
         correctEntries.append(entries[i])
 
-        # Protect against someone supplying no paremeters and getting all our data
-        # by limiting entries to 100 long!
-        if len(correctEntries) > 100:
-            return "Error: too many results"
+    # Protect against someone supplying no paremeters and getting all our data
+    # by limiting entries to 100 long!
+    if len(correctEntries) > 100:
+        return "Error: too many results"
 
-        if (len(correctEntries) == 0):
-            return "Error: 0 results"
+    if (len(correctEntries) == 0):
+        return "Error: 0 results"
 
     return jsonify(correctEntries)
 

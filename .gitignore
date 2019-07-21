@@ -2,3 +2,14 @@
 *.csv
 data_old.json
 data_expand.json
+*.pyc
+data_beforeEnrichment.json
+data_beforePostcode2.json
+*.pyc
+python/postcodes/commandOutput.txt
+python/postcodes/commandOutputOld.txt
+python/postcodes/data_correct.json
+python/postcodes/data.rar
+*.pyc
+*.pyc
+python/initial-processing/__pycache__/stats.cpython-36.pyc

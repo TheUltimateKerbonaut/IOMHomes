@@ -7,7 +7,7 @@ import os
 app = flask.Flask(__name__)
 application = app
 
-#app.config["DEBUG"] = True
+app.config["DEBUG"] = True
 
 data = {}
 data = json.load(open("../data.json", "r"))
@@ -61,11 +61,11 @@ def home():
 
     # Protect against someone supplying no paremeters and getting all our data
     # by limiting entries to 100 long!
-    if len(correctEntries) > 100:
-        return "Error: too many results"
+    if len(correctEntries) > 200:
+        return "[{\"error\": \"too many results\"}]"
 
     if (len(correctEntries) == 0):
-        return "Error: 0 results"
+        return "[{\"error\": \"zero results\"}]"
 
     return jsonify(correctEntries)
 

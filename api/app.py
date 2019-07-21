@@ -23,15 +23,15 @@ def home():
 
     for entry in data:
         for row in entry:
-            if (search == None or search in entry[row]):
+            if search == None or search.lower() in str(entry[row]).lower():
                 entries.append(entry)
 
     # Check if entries match dropdown criteria
     town = request.args.get('town')
     price_min = request.args.get('price_min')
     price_max = request.args.get('price_max')
-    acquisition_year = request.args.get('acquisition_year')
-    registered_year = request.args.get('registered_year')
+    acquisition_year = request.args.get('year')
+    registered_year = request.args.get('year')
 
     correctEntries = []
 
@@ -45,10 +45,10 @@ def home():
         if town != None and entries[i]["town"].lower() != town.lower():
             continue  # Skip current iteration in for loop. Unlike break, continue allows for future loop iterations
 
-        if entries[i]["market_value"] == "" or price_min != None and float(entries[i]["market_value"]) < float(price_min):
+        if ((price_min != None and entries[i]["market_value"] == "") or (price_min != None and float(entries[i]["market_value"]) < float(price_min))) and ((price_min != None and entries[i]["consideration"] == "") or (price_min != None and float(entries[i]["consideration"]) < float(price_min))):
             continue
 
-        if entries[i]["market_value"] == "" or price_max != None and float(entries[i]["market_value"]) > float(price_max):
+        if ((price_max != None and entries[i]["market_value"] == "") or (price_max != None and float(entries[i]["market_value"]) > float(price_max))) and ((price_max != None and entries[i]["consideration"] == "") or (price_max != None and float(entries[i]["consideration"]) > float(price_max))):
             continue
 
         if acquisition_year != None and year_acquisition != acquisition_year:

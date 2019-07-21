@@ -19,7 +19,7 @@ function search()
         priceDropdownMaxQuery = priceDropdownMaxQuery.replace("£","").replace(" ", "").replace(",", "")
 
 	// Build query string
-	var query = "http://87.254.85.85:5000/?api=1";
+	var query = "?api=1";
 
     if (searchText != "")
         query += "&search=" + searchText;
@@ -35,12 +35,11 @@ function search()
 
     if (yearDropdownQuery != "")
     {
-		query += "&acquisition_year=" + yearDropdownQuery;
-		query += "&registered_year=" + yearDropdownQuery;
+		query += "&year=" + yearDropdownQuery;
 	}
 
 	var request = new XMLHttpRequest()
-	request.open('GET', 'http://127.0.0.1:5000/?search=' + searchText, true)
+	request.open('GET', 'http://127.0.0.1:5000/' + query, true)
 	request.onload = handleResult
     request.send()
 }
@@ -61,7 +60,7 @@ function handleResult()
     // For each element in data
     // Add a new section in HTML
     // With the data from the element
-
+    console.log(data)
 }
 
 function getDropdownQuery(id)

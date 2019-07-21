@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: auto;">
+<html lang="en" style="scroll-behavior: auto;" Access-Control-Allow-Origin="*">
 
 <head>
 
@@ -62,14 +62,13 @@
                             <div class="col-8">
 
                                 <input class="form-control" type="text" placeholder="Search by address, street, etc"
-                                    aria-label="Search">
+                                    aria-label="Search" id="topSearchbar">
 
                             </div>
 
                             <div class="col-4 pl-0">
 
                                 <button class="w-100 btn btn-primary">Search</button>
-
                             </div>
 
                         </div>
@@ -93,7 +92,7 @@
                         or parish.</p>
 
                     <input class="form-control" type="text" placeholder="Search by address, street, etc"
-                        aria-label="Search">
+                        aria-label="Search" id="bottomSearchbar">
 
 
                 </div>
@@ -104,36 +103,36 @@
 
                 <div class="col-md-4">
 
-                    <select class="browser-default custom-select">
+                    <select class="browser-default custom-select" id="townDropdown">
                         <option selected>Town (N/A)</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="Douglas">Douglas</option>
+                        <option value="Onchan">Onchan</option>
+                        <option value="Ramsey">Ramsey</option>
+                        <option value="Castletown">Castletown</option>
                     </select>
 
                 </div>
 
                 <div class="col-md-4">
 
-                    <select class="browser-default custom-select">
+                    <select class="browser-default custom-select" id="priceDropdown">
                         <option selected>Price range (N/A)</option>
-                        <option value="1">£0 - £100,000</option>
-                        <option value="2">£100,000 - £250,000</option>
-                        <option value="3">£250,000 - £500,000</option>
-                        <option value="3"> £500,000 - £1,000,000</option>
+                        <option value="£0 - £100,000">£0 - £100,000</option>
+                        <option value="£100,000 - £250,000">£100,000 - £250,000</option>
+                        <option value="£250,000 - £500,000">£250,000 - £500,000</option>
+                        <option value="£500,000 - £1,000,000">£500,000 - £1,000,000</option>
                     </select>
 
                 </div>
 
                 <div class="col-md-4">
 
-                    <select class="browser-default custom-select">
+                    <select class="browser-default custom-select date-picker" id="yearDropdown">
                         <option selected>Year sold (N/A)</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
-
                 </div>
 
             </div>
@@ -143,7 +142,7 @@
                     <div class="col">
 
                         <button class="search-button w-100 btn btn-primary" onClick="search()">Search</button>
-
+                        <p class="lead text-center mt-3" style="color: red;margin-bottom: -5vh;" id="errorText"></p>
                     </div>
 
                 </div>
@@ -239,6 +238,23 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Not slim because we need jquery(window).load(function()) -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/datepicker.js"></script>
+    <script>
+    
+        $('.date-picker').yearselect()
+        
+        $('.date-picker').yearselect({
+            start: 1970,
+            end: 2020, // 1 year ahead to allow for default value
+            step: 1,
+            order: 'desc',
+            selected: "Year (N/A)",
+            formatDisplay: function(yr) { return (yr == "2020" ? "Year (N/A)" : yr) },
+            displayAsValue: true
+        });
+
+    </script>
 
     <!-- Navbar background colour script -->
     <script>

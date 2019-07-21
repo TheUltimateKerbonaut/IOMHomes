@@ -10,7 +10,7 @@ application = app
 #app.config["DEBUG"] = True
 
 data = {}
-data = json.load(open("data.json", "r"))
+data = json.load(open("../data.json", "r"))
 
 
 @app.route('/', methods=['GET'])

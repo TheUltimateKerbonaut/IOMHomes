@@ -5,10 +5,12 @@ import json
 import os
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+application = app
+
+#app.config["DEBUG"] = True
 
 data = {}
-data = json.load(open("../data.json", "r"))
+data = json.load(open("data.json", "r"))
 
 
 @app.route('/', methods=['GET'])

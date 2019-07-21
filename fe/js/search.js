@@ -1,7 +1,7 @@
 function search()
 {
 	// Get inputs
-    var searchText = document.getElementById("bottomSearchbar").value
+  var searchText = document.getElementById("bottomSearchbar").value
 
 	let townDropdownQuery = getDropdownQuery("townDropdown");
 	let priceDropdownMinQuery = getDropdownQuery("priceDropdown").split("-")[0]

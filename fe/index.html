@@ -8,6 +8,11 @@
 	<meta name="description" content="housedata.im - Manx historical property data">
 	<meta name="author" content="seamlesssoftware.im">
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 	<title>housedata.im</title>
 
 	<!-- Bootstrap core CSS -->
@@ -45,7 +50,18 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- Snackbar -->
+
+	<div class="toast" data-autohide="false">
+		<div class="toast-header">
+		  <strong class="mr-auto text-primary">Kindly Enable JavaScript To Use This Service</strong>
+		  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+		</div>
+	  </div>
+	</div>
 	</nav>
+	
 
 	<!-- Masthead / Header -->
 	<header class="masthead-index">
@@ -80,7 +96,11 @@
 		</div>
 	</header>
 
+	
+	
+
 	<div class="container mt-5">
+
 
 		<!-- Halves section -->
 		<div class="section" id="about">
@@ -201,6 +221,7 @@
 
 		</div>
 	</div>
+
 	<footer class="text-center">
 		<span>&copy;2019 SeamlessSoftware.im</span>
 	</footer>
@@ -218,11 +239,20 @@
 		})
 		*/
 
+		/*
+		Snackbar
+		*/
+
+		$(document).ready(function(){
+			$('.toast').toast('show');
+		});
+		
+
+
 	</script>
 
 	<!-- Smooth fading sccript -->
 	<script src="js/fade.js"></script>
-
 
 </body>
 

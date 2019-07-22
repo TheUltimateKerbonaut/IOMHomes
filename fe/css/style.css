@@ -125,7 +125,7 @@ body
 
 
 
-@media only screen and (min-width: 768px) /* lg */
+@media only screen and (min-width: 1200px) /* lg */
 {
 
     .result
@@ -192,7 +192,7 @@ footer
 {
     font-size: 1.2rem;
     font-weight: 300;
-    line-height: 0.8;
+    line-height: 1.0;
 }
 
 @media only screen and (max-height: 600px)
@@ -211,6 +211,11 @@ footer
         margin: auto;
     
         margin-top: 5vh;
+    }
+
+    .display-3
+    {
+        line-height: 0.9;
     }
 
 }

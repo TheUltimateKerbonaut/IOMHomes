@@ -23,7 +23,7 @@
 }
 
 
-@media only screen and (max-width: 768px) /* md or smaller */
+@media only screen and (max-width: 767px) /* md or smaller */
 {
     .nav-link
 	{

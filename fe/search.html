@@ -149,11 +149,21 @@
                 <div class="col">
 
                     <button class="search-button w-100 btn btn-primary" onClick="search()">Search</button>
-                    <p class="lead text-center mt-3" style="color: red;margin-bottom: -5vh;" id="errorText"></p>
 
                     <noscript>
                         <p class="lead text-center" style="color: red;margin-top: 7vh;">Error: Javascript must be enabled!</p>
                     </noscript>
+
+                </div>
+
+            </div>
+
+            <div class="row mt-5" style="margin-bottom: -2vh;">
+
+                <div class="col">
+
+                        <p class="lead text-center mt-3" style="color: red;margin-bottom: -5vh;" id="errorText"></p>
+                        <p class="lead text-center mt-3" style="margin-bottom: -5vh;" id="loadingText"></p>
 
                 </div>
 
@@ -182,7 +192,8 @@
     </div>
 
     <footer class="text-center">
-        <span>&copy;2019 SeamlessSoftware.im</span>
+        <span>&copy;2019 Housedata.im</span><br/>
+        <a href="http://www.seamlesssoftware.im">Website by Seamless Software</a>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
@@ -223,6 +234,8 @@
 
     <!-- Script for searching -->
     <script src="js/search.js"></script>
+
+    <script src="js/jQuery.equalHeights.js"></script>
 
 </body>
 

@@ -38,6 +38,9 @@ function search()
 		query += "&year=" + yearDropdownQuery
 	}
 
+    document.getElementById("errorText").innerHTML = ""
+    document.getElementById("loadingText").innerHTML = "Loading..."
+
 	var request = new XMLHttpRequest()
 	request.open('GET', 'http://127.0.0.1:5000/' + query, true)
 	request.onload = handleResult
@@ -51,6 +54,8 @@ function handleResult()
     document.getElementById("results").innerHTML = ""
 
 	var data = JSON.parse(this.response)
+    
+    document.getElementById("loadingText").innerHTML = ""
     
     // Check if error occured
     if (data == undefined || data[0].error !== undefined)
@@ -83,6 +88,8 @@ function handleResult()
     for (var i = 0; i < dataSize; i++)
         document.getElementById("results").innerHTML += getHTMLForEntry(data[i])
 
+    $('display-5').equalHeights();
+
         $('#resultsDIV').fadeIn(1500, "linear");
 
     $('html, body').animate({
@@ -112,17 +119,19 @@ function getHTMLForEntry(entry)
     if (entry.parish == "") entry.parish = "N/A"
 
     var html = '\
-    <div class="col result mt-5">\
+    <div class="col result mt-5 text-center result-seperator-vertical">\
         <p class="display-5">' + entry.address + '</p>\
-        <p class="results-text">Town: ' + entry.town + '</p>\
-        <p class="results-text">Postcode: ' + entry.postcode + '</p>\
-        <p class="results-text">Market value: ' + entry.market_value + '</p>\
-        <p class="results-text">Consideration: ' + entry.consideration + '</p>\
-        <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p>\
-        <p class="results-text">Registered date: ' + entry.registered_date + '</p>\
-        <p class="results-text">Parish: ' + entry.parish + '</p>\
+        <p class="results-text mt-4">Town: ' + entry.town + '</p><br/>\
+        <p class="results-text">Postcode: ' + entry.postcode + '</p><br/>\
+        <p class="results-text">Market value: ' + entry.market_value + '</p><br/>\
+        <p class="results-text">Consideration: ' + entry.consideration + '</p><br/>\
+        <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p><br/>\
+        <p class="results-text">Registered date: ' + entry.registered_date + '</p><br/>\
+        <p class="results-text">Parish: ' + entry.parish + '</p><br/>\
 \
-    </div>'
+    </div>\
+    <div class="result-seperator"></div>\
+    '
 
     return html
 }

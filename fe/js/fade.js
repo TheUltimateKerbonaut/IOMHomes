@@ -8,8 +8,6 @@ $('.nav-link-fade').click(function() {
 
     $('.section').fadeOut(1000, function() { 
 
-        console.log(this.href)
-
         if (newLocation.includes("about"))
             window.location = "search.html#search"
         else

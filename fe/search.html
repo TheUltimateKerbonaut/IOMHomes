@@ -68,10 +68,16 @@
 
                             <div class="col-4 pl-0">
 
-                                <button class="w-100 btn btn-primary">Search</button>
+                                <button class="w-100 btn btn-primary" onClick="topSearchbarSearch()">Search</button>
                             </div>
 
                         </div>
+
+                        <noscript>
+							<p class="lead text-center" style="color: red;margin-top: 7vh;font-weight: bold;">Error: Javascript must be enabled!</p>
+                        </noscript>
+                        
+                        <p class="text-white mt-3" id="scrollDownText">Please scroll down</p>
                     </div>
 
                 </div>
@@ -91,7 +97,7 @@
                     <p class="lead">Search by address, street, postcode, house name, house number, town, market value,
                         or parish.</p>
 
-                    <input class="form-control" type="text" placeholder="Search by address, street, etc"
+                    <input class="form-control" type="text" placeholder="123 Example Street"
                         aria-label="Search" id="bottomSearchbar">
 
 
@@ -138,51 +144,16 @@
 
             </div>
 
-                <div class="row" id="search-button-div">
-
-                    <div class="col">
-
-                        <button class="search-button w-100 btn btn-primary" onClick="search()">Search</button>
-                        <p class="lead text-center mt-3" style="color: red;margin-bottom: -5vh;" id="errorText"></p>
-                    </div>
-
-                </div>
-
-        </div>
-
-        <!-- Results section -->
-
-        <div class="seperator"></div>
-
-        <div class="section" id="stats">
-
-            <div class="row">
+            <div class="row" id="search-button-div">
 
                 <div class="col">
 
-                    <p class="display-5 text-md-center">119 Woodbourne Road</p>
+                    <button class="search-button w-100 btn btn-primary" onClick="search()">Search</button>
+                    <p class="lead text-center mt-3" style="color: red;margin-bottom: -5vh;" id="errorText"></p>
 
-                    <div class="row">
-
-                        <div class="col-md-6">
-
-                            <img class="property-image" src="images/map.jpg" />
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <p class="lead text-md-center">Postcode: IM2 3AU</p>
-                            <p class="lead text-md-center">Market value: £999,999</p>
-                            <p class="lead text-md-center">Postcode: IM2 3AU</p>
-                            <p class="lead text-md-center">Market value: £999,999</p>
-                            <p class="lead text-md-center">Postcode: IM2 3AU</p>
-                            <p class="lead text-md-center">Market value: £999,999</p>
-
-                        </div>
-
-                    </div>
-
+                    <noscript>
+                        <p class="lead text-center" style="color: red;margin-top: 7vh;">Error: Javascript must be enabled!</p>
+                    </noscript>
 
                 </div>
 
@@ -190,39 +161,18 @@
 
         </div>
 
+        <!-- Results section -->
+
         <div class="seperator"></div>
 
-        <div class="section" id="stats">
+        <div class="section" id="resultsDIV">
 
-            <div class="row">
+            <p id="resultsNumber" class="display-4 text-center"></p>
 
-                <div class="col">
+            <div class="row text-center" id="results">
 
-                    <p class="display-5 text-md-center">13 Bob Smith Lane</p>
-
-                    <div class="row">
-
-                        <div class="col-md-6">
-
-                            <img class="property-image" src="images/map2.jpg" />
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <p class="lead text-md-center">Postcode: BOB 123</p>
-                            <p class="lead text-md-center">Market value: £123,456</p>
-                            <p class="lead text-md-center">Postcode: BOB 123</p>
-                            <p class="lead text-md-center">Market value: £123,456</p>
-                            <p class="lead text-md-center">Postcode: BOB 132</p>
-                            <p class="lead text-md-center">Market value: £123,456</p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
+                
+                
 
             </div>
 
@@ -242,16 +192,16 @@
 
     <script src="js/datepicker.js"></script>
     <script>
-    
+
         $('.date-picker').yearselect()
-        
+
         $('.date-picker').yearselect({
             start: 1970,
             end: 2020, // 1 year ahead to allow for default value
             step: 1,
             order: 'desc',
             selected: "Year (N/A)",
-            formatDisplay: function(yr) { return (yr == "2020" ? "Year (N/A)" : yr) },
+            formatDisplay: function (yr) { return (yr == "2020" ? "Year (N/A)" : yr) },
             displayAsValue: true
         });
 

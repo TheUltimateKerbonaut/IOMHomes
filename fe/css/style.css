@@ -8,19 +8,11 @@ body
     background-color: #f4f7f8;
 }
 
-@media only screen and (max-width: 768px) /* md or smaller */
+@media only screen and (max-width: 1199px) /* md or smaller */
 {
     .text-md-center
     {
         text-align: center;
-    }
-
-    .md-seperator
-    {
-        width: 100%;
-        margin-top: 7vh;
-        height: 7vh;
-        border-top: 1px solid grey;
     }
 
     #searchbar-masthead
@@ -73,6 +65,34 @@ body
 
 }
 
+@media only screen and (min-width: 768px) and (max-width: 992px) /* md */
+{
+    .result
+    {
+        min-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) /* sm */
+{
+    .result
+    {
+        min-width: 100%;
+    }
+
+    
+}
+
+@media only screen and (max-width: 767px)
+{
+    .sm-seperator
+    {
+        width: 100%;
+        margin-top: 7vh;
+        height: 7vh;
+        border-top: 1px solid grey;
+    }
+}
 
 .seperator
 {
@@ -98,15 +118,21 @@ body
 
 .display-5
 {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: 300;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 
 
 @media only screen and (min-width: 768px) /* lg */
 {
+
+    .result
+    {
+        min-width: 33.333%;
+    }
+
     .text-md-center
     {
         text-align: left !important;
@@ -157,18 +183,54 @@ body
     }
 }
 
-svg
-{
-    width: auto;
-    height: 10vh;
-    
-    display: block;
-    margin: auto;
-
-    margin-top: 5vh;
-}
-
 footer
 {
     margin-top: 5vh;
+}
+
+.results-text
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 0.8;
+}
+
+@media only screen and (max-height: 600px)
+{
+    #scrollDownText
+    {
+        opacity: block;
+    }
+
+    svg
+    {
+        width: auto;
+        height: 20vh;
+        
+        display: block;
+        margin: auto;
+    
+        margin-top: 5vh;
+    }
+
+}
+
+@media only screen and (min-height: 600px)
+{
+    #scrollDownText
+    {
+        display: none;
+    }
+
+    
+    svg
+    {
+        width: auto;
+        height: 10vh;
+        
+        display: block;
+        margin: auto;
+    
+        margin-top: 5vh;
+    }
 }

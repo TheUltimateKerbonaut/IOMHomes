@@ -23,7 +23,7 @@ def home():
 
     for entry in data:
         for row in entry:
-            if search == None or search.lower() in str(entry[row]).lower():
+            if search == None or (search.lower() in str(entry[row]).lower() and row != "placeID"):
                 entries.append(entry)
 
     # Check if entries match dropdown criteria
@@ -32,6 +32,9 @@ def home():
     price_max = request.args.get('price_max')
     acquisition_year = request.args.get('year')
     registered_year = request.args.get('year')
+
+    if search == None and town == None and price_min == None and price_max == None and acquisition_year == None and registered_year == None:
+        return "[{\"error\": \"No input provided\"}]"
 
     correctEntries = []
 
@@ -60,12 +63,12 @@ def home():
         correctEntries.append(entries[i])
 
     # Protect against someone supplying no paremeters and getting all our data
-    # by limiting entries to 100 long!
-    if len(correctEntries) > 200:
-        return "[{\"error\": \"too many results\"}]"
+    # by limiting entries to X long!
+    if len(correctEntries) > 100:
+        return "[{\"error\": \"Too many results\"}]"
 
     if (len(correctEntries) == 0):
-        return "[{\"error\": \"zero results\"}]"
+        return "[{\"error\": \"Zero results\"}]"
 
     return jsonify(correctEntries)
 

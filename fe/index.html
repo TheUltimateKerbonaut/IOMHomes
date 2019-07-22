@@ -62,17 +62,24 @@
 							<div class="col-8">
 
 								<input class="form-control" type="text" placeholder="Search by address, street, etc"
-									aria-label="Search">
+									aria-label="Search" id="topSearchbar">
 
 							</div>
 
 							<div class="col-4 pl-0">
 
-								<button class="w-100 btn btn-primary">Search</button>
+								<button class="w-100 btn btn-primary" onClick="topSearchbarIndex()">Search</button>
 
 							</div>
 
 						</div>
+
+						<noscript>
+							<p class="lead text-center" style="color: red;margin-top: 7vh;font-weight: bold;">Error: Javascript must be enabled!</p>
+						</noscript>
+
+						<p class="text-white mt-3" id="scrollDownText">Please scroll down</p>
+
 					</div>
 
 				</div>
@@ -119,7 +126,7 @@
 
 				</div>
 
-				<div class="md-seperator"></div>
+				<div class="sm-seperator"></div>
 
 				<!-- Up-to-date data -->
 				<div class="col-md-6">
@@ -220,6 +227,9 @@
 
 	<!-- Smooth fading sccript -->
 	<script src="js/fade.js"></script>
+
+	<!-- Script for searching -->
+    <script src="js/search.js"></script>
 
 
 </body>

@@ -1,5 +1,6 @@
 function search()
 {
+
 	// Get inputs
     var searchText = document.getElementById("bottomSearchbar").value
 
@@ -109,7 +110,6 @@ function getDropdownQuery(id)
 
 function getHTMLForEntry(entry)
 {
-    console.log(entry)
 
     if (entry.postcode == "") entry.postcode = "N/A"
     if (entry.market_value == "") entry.market_value = "N/A"
@@ -141,6 +141,11 @@ function topSearchbarSearch()
     if (document.getElementById("topSearchbar").value != undefined && document.getElementById("topSearchbar").value != "")
     {
         document.getElementById("bottomSearchbar").value = document.getElementById("topSearchbar").value
+
+        $('html, body').animate({
+            scrollTop: $("#search").offset().top
+        }, 1200);
+
         search()
     }
 }
@@ -149,7 +154,9 @@ function topSearchbarIndex()
 {
     if (document.getElementById("topSearchbar").value != undefined && document.getElementById("topSearchbar").value != "")
     {
-        window.location = "index.html#stats"
+        $('html, body').animate({
+            scrollTop: $("#about").offset().top
+        }, 1200);
         $('.section').fadeOut(1000, function() {     
             window.location = "search.html?search=" + document.getElementById("topSearchbar").value
         })

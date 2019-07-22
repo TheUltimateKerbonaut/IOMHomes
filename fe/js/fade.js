@@ -4,13 +4,6 @@ $('.nav-link-fade').click(function() {
 
     newLocation = this.href
 
-    window.scroll({
-        top: document.getElementById("about"),
-        left: 0,
-        behavior: 'smooth'
-    })
-    
-
     $('.section').fadeOut(1000, function() { 
 
         if (newLocation.includes("about"))
@@ -22,6 +15,14 @@ $('.nav-link-fade').click(function() {
 
     })
 
+
+})
+
+$('.nav-link-fade-search').click(function() {
+    event.preventDefault()
+    $('html, body').animate({
+        scrollTop: $("#search").offset().top
+    }, 1200);
 
 })
 

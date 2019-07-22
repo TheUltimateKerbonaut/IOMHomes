@@ -4,6 +4,9 @@ $('.nav-link-fade').click(function() {
 
     newLocation = this.href
 
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top
+    }, 0);
     
 
     $('.section').fadeOut(1000, function() { 
@@ -16,6 +19,7 @@ $('.nav-link-fade').click(function() {
         //newPage()
 
     })
+
 
 })
 

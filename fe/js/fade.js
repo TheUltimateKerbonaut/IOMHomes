@@ -4,9 +4,11 @@ $('.nav-link-fade').click(function() {
 
     newLocation = this.href
 
-    $('html, body').animate({
-        scrollTop: $("#about").offset().top
-    }, 0);
+    window.scroll({
+        top: document.getElementById("about"),
+        left: 0,
+        behavior: 'smooth'
+    })
     
 
     $('.section').fadeOut(1000, function() { 

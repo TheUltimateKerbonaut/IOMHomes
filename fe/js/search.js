@@ -62,9 +62,9 @@ function handleResult()
     if (data == undefined || data[0].error !== undefined)
     {
         document.getElementById("errorText").innerHTML = "Error: " + data[0].error
-        $('html, body').animate({
-            scrollTop: $("#resultsDIV").offset().top
-        }, 1200);
+
+        zenscroll.to(document.getElementById("results-container"))
+
         return
     }
 
@@ -72,7 +72,7 @@ function handleResult()
     // For each element in data, add a new section in results
 
     document.getElementById("errorText").innerHTML = ""
-    $('#resultsDIV').fadeOut(1)
+    $('#results-container').fadeOut(1)
 
     Object.size = function(obj) {
         var size = 0, key;
@@ -89,14 +89,13 @@ function handleResult()
     for (var i = 0; i < dataSize; i++)
         document.getElementById("results").innerHTML += getHTMLForEntry(data[i])
 
-    $('display-5').equalHeights();
+    $('.result-title').equalHeights();
 
-        $('#resultsDIV').fadeIn(1500, "linear");
 
-    $('html, body').animate({
-        scrollTop: $("#resultsDIV").offset().top
-    }, 1200);
+    zenscroll.to(document.getElementById("results-container"))
 
+    $('#results-container').fadeIn(1500, "linear");
+    
 }
 
 function getDropdownQuery(id)
@@ -119,87 +118,17 @@ function getHTMLForEntry(entry)
     if (entry.parish == "") entry.parish = "N/A"
 
     var html = '\
-    <div class="col result mt-5 text-center result-seperator-vertical">\
-        <p class="display-5">' + entry.address + '</p>\
-        <p class="results-text mt-4">Town: ' + entry.town + '</p><br/>\
-        <p class="results-text">Postcode: ' + entry.postcode + '</p><br/>\
-        <p class="results-text">Market value: ' + entry.market_value + '</p><br/>\
-        <p class="results-text">Consideration: ' + entry.consideration + '</p><br/>\
-        <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p><br/>\
-        <p class="results-text">Registered date: ' + entry.registered_date + '</p><br/>\
-        <p class="results-text">Parish: ' + entry.parish + '</p><br/>\
-\
+    <div class="col result result-width mt-5 text-center" style="width: 33.33%;">\
+        <p class="lead result-title font-weight-normal">' + entry.address + '</p>\
+        <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p>\
+        <p class="results-text">Registered date: ' + entry.registered_date + '</p>\
+        <p class="results-text">Consideration: ' + entry.consideration + '</p>\
+        <p class="results-text">Market value: ' + entry.market_value + '</p>\
+        <p class="results-text">Postcode: ' + entry.postcode + '</p>\
+		<p class="results-text">Town: ' + entry.town + '</p>\
+		<p class="results-text">Parish: ' + entry.parish + '</p>\
     </div>\
-    <div class="result-seperator"></div>\
     '
 
     return html
 }
-
-function topSearchbarSearch()
-{
-    if (document.getElementById("topSearchbar").value != undefined && document.getElementById("topSearchbar").value != "")
-    {
-        document.getElementById("bottomSearchbar").value = document.getElementById("topSearchbar").value
-
-        $('html, body').animate({
-            scrollTop: $("#search").offset().top
-        }, 1200);
-
-        search()
-    }
-}
-
-function topSearchbarIndex()
-{
-    if (document.getElementById("topSearchbar").value != undefined && document.getElementById("topSearchbar").value != "")
-    {
-        $('html, body').animate({
-            scrollTop: $("#about").offset().top
-        }, 1200);
-        $('.section').fadeOut(1000, function() {     
-            window.location = "search.html?search=" + document.getElementById("topSearchbar").value
-        })
-    }
-}
-
-function parse_query_string(query) {
-    var vars = query.split("&");
-    var query_string = {};
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split("=");
-      var key = decodeURIComponent(pair[0]);
-      var value = decodeURIComponent(pair[1]);
-      // If first entry with this name
-      if (typeof query_string[key] === "undefined") {
-        query_string[key] = decodeURIComponent(value);
-        // If second entry with this name
-      } else if (typeof query_string[key] === "string") {
-        var arr = [query_string[key], decodeURIComponent(value)];
-        query_string[key] = arr;
-        // If third or later entry with this name
-      } else {
-        query_string[key].push(decodeURIComponent(value));
-      }
-    }
-    return query_string;
-  }
-  
-
-$( document ).ready(function() {
-    
-    let query_string = window.location.search.substring(1)
-    let result = parse_query_string(query_string)
-
-    if (result.search != undefined && window.location.href.includes("search"))
-    {
-        document.getElementById("topSearchbar").value = result.search
-        document.getElementById("bottomSearchbar").value = result.search
-        $('html, body').animate({
-            scrollTop: $("#search").offset().top
-        }, 1200);
-        setTimeout(function() {search()}, 1000)
-        //search()
-    }
-
-});

@@ -6,117 +6,105 @@ html
 body
 {
     background-color: #f4f7f8;
-    min-height: 100vh;
 }
 
-@media only screen and (max-width: 1199px) /* md or smaller */
+.masthead
 {
-    .text-md-center
-    {
-        text-align: center;
-    }
+    min-height: 75%;
+    min-height: 75vh;
+    overflow: auto;
+    padding-top: 10%;
+    padding-top: 10vh;
+    background-image: url('../images/iomBackgroundDark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
 
-    #searchbar-masthead
-    {
-        margin-top: 7vh;
-        margin-left: 5%;
-        width: 90%;
-        margin-bottom: 10vh;
-    }
-
-    .masthead-index
-    {
-        min-height: 75vh;
-        padding-top: 10vh;
-        background-image: url('../images/iomBackground.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed; /* Parallax effect */
-    }
-
-    .masthead-search
-    {
-        min-height: 75vh;
-        padding-top: 10vh;
-        background-image: url('../images/iomBackground2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed; /* Parallax effect */
-    }
-
-    .search-button
-    {
-        margin-top: 7vh;
-    }
-
-    select
-    {
-        margin-top: 1.5vh;
-    }
-    
-    .property-image
-    {
-        border-radius: 5%;
-        width: 100%;
-        height: auto;
-        margin-bottom: 2vh;
-    }
+    display: flex;
+    align-items: center;
 
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) /* md */
+#masthead-text
 {
-    .result
-    {
-        min-width: 50%;
-    }
+    font-family: Rubik,Lato,lucida grande,lucida sans unicode,Tahoma,Sans-Serif; 
 }
 
-@media only screen and (max-width: 768px) /* sm */
+#results-container
 {
-    .result
-    {
-        min-width: 100%;
-    }
-
-    
-}
-
-@media only screen and (max-width: 767px)
-{
-    .sm-seperator
-    {
-        width: 100%;
-        margin-top: 7vh;
-        height: 7vh;
-        border-top: 1px solid grey;
-    }
-
-    .result-seperator
-    {
-        width: 100%;
-        height: 1px;
-        border-top: 1px solid grey;
-    }
-}
-
-@media only screen and (min-width: 768px)
-{
-    #results .result-seperator-vertical
-    {
-        border-right: 1.0px solid rgba(128, 128, 128);
-        border-left: 1.0px solid rgba(128, 128, 128);
-    }
-}
-
-.seperator
-{
-    width: 100%;
-    margin-top: 7vh;
-    height: 7vh;
     border-top: 1px solid grey;
+}
+
+.results-text
+{
+    line-height: 1.0;
+}
+
+#results
+{
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: -5vh;
+}
+
+.result
+{
+    background-color: rgb(232, 230, 230);
+
+    box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 30px;
+
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/* Extra small devices */
+@media (max-width: 575px)
+{
+    .result-width { min-width: 97%; }
+}
+
+/* Small devices */
+@media (min-width: 576px) and (max-width: 767px)
+{
+    .result-width { min-width: 97%; }
+}
+
+/* Medium devices */
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .result-width { min-width: 49%; }
+}
+
+/* Large devices */
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    .result-width { min-width: 31%; }
+}
+
+/* Extra large devices */
+@media (min-width: 1200px)
+{
+    .result-width { min-width: 31%; }
+}
+
+/* About page */
+#aboutMasthead
+{
+    border: 5px solid black;
+    background-color: #f4f7f8;
 }
 
 .progress
@@ -133,138 +121,37 @@ body
     font-size: 170%;
 }
 
-.display-5
+/* Extra small devices */
+@media (max-width: 575px)
 {
-    font-size: 2.0rem;
-    font-weight: 300;
-    line-height: 1.3;
+    svg { width: 20vw; height: 20vw; }
 }
 
-
-@media only screen and (min-width: 992px)
+/* Small devices */
+@media (min-width: 576px) and (max-width: 767px)
 {
-    .result
-    {
-        min-width: 33.333%;
-    }
+    svg { width: 15vw; height: 15vw; }
 }
 
-@media only screen and (min-width: 1200px) /* lg */
+/* Medium devices */
+@media (min-width: 768px) and (max-width: 991px)
 {
-
-    .text-md-center
-    {
-        text-align: left !important;
-    }
-
-    #searchbar-masthead
-    {
-        margin-top: 7vh;
-        margin-left: 25%;
-        width: 50%;
-        margin-bottom: 10vh;
-    }
-
-    .masthead-index
-    {
-        min-height: 75vh;
-        padding-top: 20vh;
-        background-image: url('../images/iomBackground.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed; /* Parallax effect */
-    }
-
-    .masthead-search
-    {
-        min-height: 75vh;
-        padding-top: 20vh;
-        background-image: url('../images/iomBackground2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed; /* Parallax effect */
-    }
-
-    .property-image
-    {
-        border-radius: 5%;
-        width: 100%;
-        height: auto;
-    }
-
-    #search-button-div
-    {
-        margin-top: 7vh;
-        width: 50% !important;
-        margin-left: 25% !important;
-    }
+    svg { width: 10vw; height: 10vw; }
 }
 
-footer
-{   
-    border-top: 1px solid grey;
-    padding-top: 1vh;
-    margin-top: 6vh;
-    padding-bottom: 1vh;
+/* Large devices */
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    svg { width: 10vw; height: 10vw; }
 }
 
-.results-text
+/* Extra large devices */
+@media (min-width: 1200px)
 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 0.1 !important;
+    svg { width: 7vw; height: 7vw; }
 }
 
-@media only screen and (max-height: 600px)
+.about-container
 {
-    #scrollDownText
-    {
-        opacity: block;
-    }
-
-    svg
-    {
-        width: auto;
-        height: 20vh;
-        
-        display: block;
-        margin: auto;
-    
-        margin-top: 5vh;
-    }
-
-    .display-3
-    {
-        line-height: 0.9;
-    }
-
-}
-
-@media only screen and (min-height: 600px)
-{
-    #scrollDownText
-    {
-        display: none;
-    }
-
-    
-    svg
-    {
-        width: auto;
-        height: 10vh;
-        
-        display: block;
-        margin: auto;
-    
-        margin-top: 5vh;
-    }
-}
-
-#seamlessLogo
-{
-    height: 20vh;
-    width: auto;
-    background-image: url("../images/ssLogo.png");
+   
 }

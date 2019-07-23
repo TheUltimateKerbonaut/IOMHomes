@@ -15,7 +15,6 @@ body
     overflow: auto;
     padding-top: 10%;
     padding-top: 10vh;
-    background-image: url('../images/iomBackgroundDark.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,6 +23,11 @@ body
     display: flex;
     align-items: center;
 
+}
+
+#mastheadIndex
+{
+    background-image: url('../images/iomBackgroundDark.jpg');
 }
 
 #masthead-text
@@ -151,7 +155,7 @@ body
     svg { width: 7vw; height: 7vw; }
 }
 
-.about-container
+#mastheadAbout
 {
-   
+    background-image: url('../images/iomBackground2.jpg');
 }

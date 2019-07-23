@@ -43,7 +43,7 @@ function search()
     document.getElementById("loadingText").innerHTML = "Loading..."
 
 	var request = new XMLHttpRequest()
-	request.open('GET', 'http://127.0.0.1:5000/' + query, true)
+	request.open('GET', 'http://housedata.im/api/' + query, true)
 	request.onload = handleResult
     request.send()
 }
@@ -61,7 +61,7 @@ function handleResult()
     // Check if error occured
     if (data == undefined || data[0].error !== undefined)
     {
-        document.getElementById("errorText").innerHTML = "Error: " + data[0].error
+        document.getElementById("errorText").innerHTML = data[0].error
 
         zenscroll.to(document.getElementById("results-container"))
 

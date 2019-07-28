@@ -1,0 +1,60 @@
+
+header
+{
+    padding-top: 19vh;
+    padding-bottom: 15vh;
+
+    @include xxs-down
+    {
+        padding-top: 13vh;
+    }    
+
+    background-image:url("../images/iomBackgroundDark.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-color: #37517e!important;
+
+    h1
+    {
+        font-family: $fontLarge;   
+     
+        font-size: $sizeMedium;
+
+        text-shadow: 1px 1px black;
+    }
+
+    @include xs-down
+    {
+        #form
+        {
+            margin-top: 5vh;
+        }
+    }
+
+    b
+    {
+        font-size: $sizeLarge * 0.4;
+    }
+
+    p
+    {
+        font-family: $fontSmall;   
+        font-size: $sizeSmall;
+        line-height: 1.6em;
+    }
+
+    svg
+    {
+        width: 30px;
+        height: 30px;
+        fill: white;
+    }
+
+    .custom-select
+    {
+        height: 45px;
+    }
+}

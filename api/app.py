@@ -34,7 +34,7 @@ def home():
     registered_year = request.args.get('year')
 
     if search == None and town == None and price_min == None and price_max == None and acquisition_year == None and registered_year == None:
-        return "[{\"error\": \"Please provide more search paremeters\"}]"
+        return "[{\"error\": \"Please provide a search paremeters\"}]"
 
     correctEntries = []
 
@@ -64,7 +64,7 @@ def home():
 
     # Protect against someone supplying no paremeters and getting all our data
     # by limiting entries to X long!
-    if len(correctEntries) > 100:
+    if len(correctEntries) > 500:
         return "[{\"error\": \"There are too many results. Please make your search more specific.\"}]"
 
     if (len(correctEntries) == 0):

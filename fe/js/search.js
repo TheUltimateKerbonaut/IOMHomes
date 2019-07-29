@@ -43,7 +43,7 @@ function search()
     document.getElementById("loadingText").innerHTML = "Loading..."
 
 	var request = new XMLHttpRequest()
-	request.open('GET', 'http://housedata.im/api/' + query, true)
+	request.open('GET', 'https://housedata.im/api/' + query, true)
 	request.onload = handleResult
     request.send()
 }

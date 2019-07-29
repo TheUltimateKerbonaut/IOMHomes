@@ -1,0 +1,39 @@
+$cardBackgroundColour: rgb(240, 240, 240);
+
+#cards-container
+{
+    padding: 3%;
+
+    h1
+    {
+        font-family: $fontLarge;   
+        font-weight: bold;
+        font-size: $sizeLarge;
+    }
+
+    .card
+    {
+        margin-top: 5vh;
+        padding-top: 3%;
+        
+        @include sm-down
+        {
+            min-width: 90%;
+        }
+
+        svg
+        {
+            width: auto;
+            height: 100px;    
+
+            fill: url(#card-gradient) $complimentaryColour;
+        }
+
+        p
+        {
+            color: rgb(100, 100, 100);
+        }
+    }
+
+    background: $cardBackgroundColour;
+}

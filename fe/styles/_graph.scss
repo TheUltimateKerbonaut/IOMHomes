@@ -1,0 +1,52 @@
+$graph-width: 80%;
+
+#graph
+{
+    margin-top: -15vh;
+    background-color: rgb(250, 250, 250);
+    border-radius: .3em;
+    
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+
+    width: $graph-width;
+    margin-left: (100 - $graph-width) / 2;
+    padding: 3%;
+
+    #chart-container
+    {
+        position:relative;
+        width: 100%;
+        height: 40vh;
+
+        @include sm-down
+        {
+            height: 50vh;
+        }
+    }
+
+    #background
+    {
+        float: right;
+        height: 1vh;
+        width: 5vh;
+        
+        background: rgb(46,208,110);
+        background: linear-gradient(90deg, rgba(46,208,110,1) 0%, rgba(0,123,255,1) 100%);
+
+        margin-top: 0.6%;
+    }
+
+    #text
+    {
+        float: right;
+        margin-right: 3%;
+        margin-left: 1%;
+    }
+        
+}
+
+#bottom-text
+{
+    width: 80%;
+    margin-left: (100 - $graph-width) / 2;
+}

@@ -1,6 +1,8 @@
 @import "_variables.scss";
 @import "_navbar.scss";
 @import "_header.scss";
+@import "_graph.scss";
+@import "_cards.scss";
 
 html
 {
@@ -9,5 +11,39 @@ html
 
 .btn
 {
-    border-width: 2px;
+    border-width: 4px;
+}
+
+.btn-success
+{
+    background-color: $complimentaryColour !important;
+    border-color: $complimentaryColour !important;
+}
+
+#image-break
+{
+    #diagonal
+    {
+        z-index: 999;
+        background: rgb(100,100,100);
+        background: linear-gradient(to left top, rgba(0, 0, 0, 0) 50%,$cardBackgroundColour 51%);
+        height: 15vh;
+        width: 100%;
+
+        padding: -3vw;
+        margin:0;
+    }
+
+    position: relative;
+    height: 70vh;
+    background-image: url("../images/iomBackgroundDark.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer
+{
+    background-color: $mainColour;
 }

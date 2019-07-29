@@ -20,10 +20,10 @@ header
     h1
     {
         font-family: $fontLarge;   
-     
+        font-weight: bold;
         font-size: $sizeMedium;
 
-        text-shadow: 1px 1px black;
+        text-shadow: 2px 2px black;
     }
 
     @include xs-down
@@ -44,6 +44,7 @@ header
         font-family: $fontSmall;   
         font-size: $sizeSmall;
         line-height: 1.6em;
+        
     }
 
     svg
@@ -53,7 +54,7 @@ header
         fill: white;
     }
 
-    .custom-select
+    .custom-select, .searchbar
     {
         height: 45px;
     }

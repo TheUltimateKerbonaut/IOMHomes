@@ -42,19 +42,22 @@ function search()
     document.getElementById("errorText").innerHTML = ""
     document.getElementById("loadingText").innerHTML = "Loading..."
 
-	var request = new XMLHttpRequest()
-	request.open('GET', 'http://housedata.im/api/' + query, true)
-	request.onload = handleResult
-    request.send()
+	$.ajax({
+	  dataType: "json",
+	  url: "https://housedata.im/api/",
+	  data: query,
+	  success: function (data)
+	  {
+		  handleResult(data);
+	  }
+	});
 }
 
-function handleResult()
+function handleResult(data)
 {
 
     document.getElementById("resultsNumber").textContent = ""
     document.getElementById("results").innerHTML = ""
-
-	var data = JSON.parse(this.response)
     
     document.getElementById("loadingText").innerHTML = ""
     

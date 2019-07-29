@@ -9,6 +9,7 @@ entries = {}
 # Populate it with entries
 for entry in data:
     #Find price and year
+    date = entry["acquisition_date"]
     price = entry["market_value"]
     year = date.split("/")[2]
 

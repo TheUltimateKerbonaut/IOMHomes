@@ -42,3 +42,11 @@ $lg: 1200px;
         @content;
     }
 }
+
+@mixin md-down
+{
+    @media only screen and (max-width: $md)
+    {
+        @content;
+    }
+}

@@ -41,9 +41,18 @@ html
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
 
-footer
-{
-    background-color: $mainColour;
+    #footer-block
+    {
+        position: absolute;
+        bottom: 2%;
+        left: 25%;
+        width: 50%;
+
+        @include md-down
+        {
+            width: 80%;
+            left: 10%;
+        }
+    }
 }

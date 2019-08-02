@@ -3,9 +3,11 @@
 @import "_header.scss";
 @import "_graph.scss";
 @import "_cards.scss";
+@import "_footer.scss";
 
 html
 {
+    scroll-behavior: smooth;
     background-color: $backgroundColour;
 }
 
@@ -18,41 +20,4 @@ html
 {
     background-color: $complimentaryColour !important;
     border-color: $complimentaryColour !important;
-}
-
-#image-break
-{
-    #diagonal
-    {
-        z-index: 999;
-        background: rgb(100,100,100);
-        background: linear-gradient(to left top, rgba(0, 0, 0, 0) 50%,$cardBackgroundColour 51%);
-        height: 15vh;
-        width: 100%;
-
-        padding: -3vw;
-        margin:0;
-    }
-
-    position: relative;
-    height: 70vh;
-    background-image: url("../images/iomBackgroundDark.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    #footer-block
-    {
-        position: absolute;
-        bottom: 2%;
-        left: 25%;
-        width: 50%;
-
-        @include md-down
-        {
-            width: 80%;
-            left: 10%;
-        }
-    }
 }

@@ -209,6 +209,94 @@ header .custom-select, header .searchbar {
   }
 }
 
+.custom-select, .searchbar {
+  height: 45px;
+}
+
+#search-header {
+  padding: 0;
+  background-image: url("../images/path.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#search-container {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  background-color: #f0f0f0;
+  padding: 1%;
+}
+
+@media only screen and (max-width: 768px) {
+  #search-container {
+    max-width: 94%;
+  }
+}
+
+#search-container svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+#search-container .btn-tertiary {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+#search-container #loadingText {
+  font-size: 1.2em;
+}
+
+#search-container #errorText {
+  font-size: 1.2em;
+  color: red;
+}
+
+#diagonal-search {
+  z-index: 999;
+  background: #f0f0f0;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(51%, #f0f0f0));
+  background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 50%, #f0f0f0 51%);
+  height: 15vh;
+  width: 100%;
+  padding: -3vw;
+  margin: 0;
+}
+
+#results-container {
+  background-color: #f0f0f0;
+}
+
+#results {
+  background-color: #f0f0f0;
+}
+
+#results .card {
+  min-width: 27%;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  margin-top: 5vh;
+}
+
+@media only screen and (max-width: 992px) {
+  #results .card {
+    min-width: 31%;
+  }
+}
+
+#results .card .card-img-top {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background: #2ed06e;
+  /* background: linear-gradient(180deg, $complimentaryColour 0%, $mainColour 50%, rgba(253,187,45,0) 100%); */
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #ececec;
@@ -221,5 +309,16 @@ html {
 .btn-success {
   background-color: #2ed06e !important;
   border-color: #2ed06e !important;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+h4, h3 {
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

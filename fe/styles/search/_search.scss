@@ -1,0 +1,102 @@
+$searchGrey: rgb(240, 240, 240);
+
+.custom-select, .searchbar
+{
+    height: 45px;
+}
+
+#search-header
+{
+    padding: 0;
+    background-image:url("../images/path.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#search-container
+{
+    box-shadow: $shadow;
+    
+    background-color: $searchGrey;
+
+    padding: 1%;
+
+    @include sm-down
+    {
+        max-width: 94%; 
+    }
+
+    svg
+    {
+        width: 30px;
+        height: 30px;
+        fill: white;
+    }
+
+    .btn-tertiary
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+    
+    #loadingText
+    {
+        font-size: 1.2em;
+    }
+
+    #errorText
+    {
+        font-size: 1.2em;
+        color: red;
+    }
+}
+
+#diagonal-search
+{
+    z-index: 999;
+    background: $searchGrey;
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 50%,$cardBackgroundColour 51%);
+    height: 15vh;
+    width: 100%;
+
+    padding: -3vw;
+    margin:0;
+}
+
+#results-container
+{
+    background-color: $searchGrey;
+}
+
+#results
+{
+    background-color: $searchGrey;
+
+    .card
+    {
+        min-width: 27%;
+
+        @include md-down
+        {
+            min-width: 31%;
+        }
+        
+
+        box-shadow: $shadow;
+
+        margin-top: 5vh;
+
+        .card-img-top
+        {
+            padding-left: 1%;
+            padding-right: 1%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            background: $complimentaryColour;
+           /* background: linear-gradient(180deg, $complimentaryColour 0%, $mainColour 50%, rgba(253,187,45,0) 100%); */
+        }
+    }
+}

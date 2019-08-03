@@ -5,6 +5,8 @@
 @import "_cards.scss";
 @import "_footer.scss";
 
+@import "search/_search.scss";
+
 html
 {
     scroll-behavior: smooth;
@@ -20,4 +22,17 @@ html
 {
     background-color: $complimentaryColour !important;
     border-color: $complimentaryColour !important;
+}
+
+h1
+{
+    font-family: $fontLarge;   
+    font-weight: bold;
+    font-size: $sizeLarge;
+}
+
+h4, h3
+{
+    font-family: $fontLarge;
+    font-weight: bold;
 }

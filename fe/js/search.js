@@ -2,7 +2,7 @@ function search()
 {
 
 	// Get inputs
-    var searchText = document.getElementById("bottomSearchbar").value
+    var searchText = document.getElementById("searchbar").value
 
 	let townDropdownQuery = getDropdownQuery("townDropdown")
 	let priceDropdownMinQuery = getDropdownQuery("priceDropdown").split("-")[0]
@@ -52,7 +52,7 @@ function handleResult()
 {
 
     document.getElementById("resultsNumber").textContent = ""
-    document.getElementById("results").innerHTML = ""
+    document.getElementById("results-js").innerHTML = ""
 
 	var data = JSON.parse(this.response)
     
@@ -63,8 +63,6 @@ function handleResult()
     {
         document.getElementById("errorText").innerHTML = data[0].error
 
-        zenscroll.to(document.getElementById("results-container"))
-
         return
     }
 
@@ -72,7 +70,7 @@ function handleResult()
     // For each element in data, add a new section in results
 
     document.getElementById("errorText").innerHTML = ""
-    $('#results-container').fadeOut(1)
+    $('#results').fadeOut(1)
 
     Object.size = function(obj) {
         var size = 0, key;
@@ -84,17 +82,12 @@ function handleResult()
     let dataSize = Object.size(data);
     document.getElementById("resultsNumber").textContent = "Found " + dataSize + " entries"
 
-    document.getElementById("results").innerHTML = ""
+    document.getElementById("results-js").innerHTML = ""
 
     for (var i = 0; i < dataSize; i++)
-        document.getElementById("results").innerHTML += getHTMLForEntry(data[i])
+        document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i])
 
-    $('.result-title').equalHeights();
-
-
-    zenscroll.to(document.getElementById("results-container"))
-
-    $('#results-container').fadeIn(1500, "linear");
+    $('#results').fadeIn(1500, "linear");
     
 }
 
@@ -110,25 +103,70 @@ function getDropdownQuery(id)
 function getHTMLForEntry(entry)
 {
 
-    if (entry.postcode == "") entry.postcode = "N/A"
-    if (entry.market_value == "") entry.market_value = "N/A"
-    if (entry.consideration == "") entry.consideration = "N/A"
-    if (entry.acquisition_date == "") entry.acquisition_date = "N/A"
-    if (entry.registered_date == "") entry.registered_date = "N/A"
-    if (entry.parish == "") entry.parish = "N/A"
+    if (entry.postcode == "" || entry.postcode == undefined) entry.postcode = "N/A"
+    if (entry.market_value == "" || entry.market_value == undefined) entry.market_value = "N/A"
+    if (entry.consideration == "" || entry.consideration == undefined) entry.consideration = "N/A"
+    if (entry.acquisition_date == "" || entry.acquisition_date == undefined) entry.acquisition_date = "N/A"
+    if (entry.registered_date == "" || entry.registered_date == undefined) entry.registered_date = "N/A"
+    if (entry.parish == "" || entry.parish == undefined) entry.parish = "N/A"
 
     var html = '\
-    <div class="col result result-width mt-5 text-center" style="width: 33.33%;">\
-        <p class="lead result-title font-weight-normal">' + entry.address + '</p>\
-        <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p>\
-        <p class="results-text">Registered date: ' + entry.registered_date + '</p>\
-        <p class="results-text">Consideration: ' + entry.consideration + '</p>\
-        <p class="results-text">Market value: ' + entry.market_value + '</p>\
-        <p class="results-text">Postcode: ' + entry.postcode + '</p>\
-		<p class="results-text">Town: ' + entry.town + '</p>\
-		<p class="results-text">Parish: ' + entry.parish + '</p>\
-    </div>\
+        <div class="card">\
+\
+            <h4 class="card-img-top text-left text-center">' + entry.address + '</h4>\
+\
+            <div class="card-body text-center">\
+\
+                <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p>\
+                <p class="results-text">Registered date: ' + entry.registered_date + '</p>\
+                <p class="results-text">Consideration: ' + entry.consideration + '</p>\
+                <p class="results-text">Market value: ' + entry.market_value + '</p>\
+                <p class="results-text">Postcode: ' + entry.postcode + '</p>\
+                <p class="results-text">Town: ' + entry.town + '</p>\
+                <p class="results-text">Parish: ' + entry.parish + '</p>\
+\
+            </div>\
+\
+\
+        </div>\
     '
 
     return html
+}
+
+// ------- Handle HTTP GET on index page  -------
+function searchNow()
+{   
+    // Get inputs
+    var searchText = document.getElementById("searchbar").value
+
+	let townDropdown = document.getElementById("townDropdown")
+	let townDropdownID = townDropdown.selectedIndex
+    
+    let priceDropdown = document.getElementById("priceDropdown")
+	let priceDropdownID = priceDropdown.selectedIndex
+
+	let yearDropdown = document.getElementById("yearDropdown")
+	let yearDropdownID = yearDropdown.selectedIndex
+
+    // Bit of formatting here and there
+    if (searchText !== undefined)
+        searchText = searchText.replace(" ", "%20")
+
+	// Build query string
+	var query = "?index=1"
+
+    if (searchText != "")
+        query += "&search=" + searchText
+
+    if (townDropdownID != undefined)
+        query += "&town=" + townDropdownID
+
+	if (priceDropdownID != undefined)
+		query += "&price=" + priceDropdownID
+
+    if (yearDropdownID != undefined)
+		query += "&year=" + yearDropdownID
+    
+    window.location = "search.html" + query;
 }

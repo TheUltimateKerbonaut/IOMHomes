@@ -23,7 +23,7 @@ def home():
 
     for entry in data:
         for row in entry:
-            if search == None or (search.lower() in str(entry[row]).lower() and row != "placeID"):
+            if search == None or (search.lower()..replace(" ", "") in str(entry[row]).lower().replace(" ", "") and row != "placeID"):
                 entries.append(entry)
 
     # Check if entries match dropdown criteria

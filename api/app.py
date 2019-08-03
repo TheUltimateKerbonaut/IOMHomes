@@ -66,6 +66,7 @@ def home():
     # by limiting entries to X long!
     if len(correctEntries) > 500:
         return "[{\"error\": \"There are too many results. Please make your search more specific.\"}]"
+        
 
     if (len(correctEntries) == 0):
         return "[{\"error\": \"There are no results\"}]"

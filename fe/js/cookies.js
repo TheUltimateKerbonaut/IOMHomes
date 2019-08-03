@@ -10,6 +10,6 @@ function cookieAccept()
 $(document).ready(function() {
     if ($("body").getCookie("cookieConsent019283"))
     {
-        alert("bob")
+        
     }
 });

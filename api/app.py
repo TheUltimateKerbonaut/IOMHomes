@@ -3,6 +3,8 @@ from flask import request, jsonify, Flask
 
 import json
 import os
+import datetime
+import operator
 
 app = flask.Flask(__name__)
 application = app
@@ -23,7 +25,7 @@ def home():
 
     for entry in data:
         for row in entry:
-            if search == None or (search.lower() in str(entry[row]).lower() and row != "placeID"):
+            if search == None or (search.lower().replace(" ", "") in str(entry[row]).lower().replace(" ", "") and row != "placeID"):
                 entries.append(entry)
 
     # Check if entries match dropdown criteria
@@ -64,12 +66,14 @@ def home():
 
     # Protect against someone supplying no paremeters and getting all our data
     # by limiting entries to X long!
-    if len(correctEntries) > 500:
+    if len(correctEntries) > 200:
         return "[{\"error\": \"There are too many results. Please make your search more specific.\"}]"
 
     if (len(correctEntries) == 0):
         return "[{\"error\": \"There are no results\"}]"
 
+    correctEntries.sort(key=lambda x: datetime.datetime.strptime(x['registered_date'], '%d/%m/%Y'))
+    correctEntries.reverse()
     return jsonify(correctEntries)
 
 if __name__ == '__main__':

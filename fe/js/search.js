@@ -88,6 +88,7 @@ function handleResult()
         document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i])
 
     $('#results').fadeIn(1500, "linear");
+    zenscroll.to(document.getElementById("results"))
     
 }
 

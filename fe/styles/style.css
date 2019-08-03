@@ -1,5 +1,6 @@
-.navbar-toggler-icon {
+.custom-toggler .navbar-toggler-icon {
   color: white;
+  fill: white;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
@@ -90,8 +91,8 @@ header .custom-select, header .searchbar {
   margin-top: -15vh;
   background-color: #fafafa;
   border-radius: .3em;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   width: 80%;
   margin-left: 10%;
   padding: 3%;
@@ -150,8 +151,8 @@ header .custom-select, header .searchbar {
 }
 
 #cards-container .card {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   margin-top: 5vh;
   padding-top: 3%;
 }
@@ -174,7 +175,7 @@ header .custom-select, header .searchbar {
 
 #image-break {
   position: relative;
-  height: 70vh;
+  height: 40vh;
   background-image: url("../images/iomBackgroundDark.jpg");
   background-size: cover;
   background-position: center;
@@ -194,10 +195,11 @@ header .custom-select, header .searchbar {
 }
 
 #image-break #footer-block {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   position: absolute;
   bottom: 2%;
+  padding-bottom: 1vh;
   left: 25%;
   width: 50%;
 }
@@ -223,10 +225,13 @@ header .custom-select, header .searchbar {
 }
 
 #search-container {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   background-color: #f0f0f0;
   padding: 1%;
+  margin-top: 2vh;
+  max-width: 60%;
+  border-radius: 0.25em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -276,9 +281,9 @@ header .custom-select, header .searchbar {
 }
 
 #results .card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   min-width: 27%;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
   margin-top: 5vh;
 }
 

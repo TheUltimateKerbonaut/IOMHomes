@@ -23,6 +23,11 @@ $searchGrey: rgb(240, 240, 240);
 
     padding: 1%;
 
+    margin-top: 2vh;
+    max-width: 60%;
+
+    border-radius: 0.25em;
+
     @include sm-down
     {
         max-width: 94%; 
@@ -77,6 +82,8 @@ $searchGrey: rgb(240, 240, 240);
 
     .card
     {
+        box-shadow: $shadow;
+
         min-width: 27%;
 
         @include md-down
@@ -85,7 +92,7 @@ $searchGrey: rgb(240, 240, 240);
         }
         
 
-        box-shadow: $shadow;
+       
 
         margin-top: 5vh;
 

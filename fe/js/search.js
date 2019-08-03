@@ -166,7 +166,10 @@ function searchNow()
 		query += "&price=" + priceDropdownID
 
     if (yearDropdownID != undefined)
-		query += "&year=" + yearDropdownID
-    
-    window.location = "search.html" + query;
+        query += "&year=" + yearDropdownID
+        
+    if (query != "?index=1&town=0&price=0&year=0")
+        window.location = "search.html" + query;
+    else
+        window.location = "search.html";
 }

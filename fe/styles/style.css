@@ -1,5 +1,6 @@
-.navbar-toggler-icon {
+.custom-toggler .navbar-toggler-icon {
   color: white;
+  fill: white;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
@@ -90,8 +91,8 @@ header .custom-select, header .searchbar {
   margin-top: -15vh;
   background-color: #fafafa;
   border-radius: .3em;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   width: 80%;
   margin-left: 10%;
   padding: 3%;
@@ -150,8 +151,8 @@ header .custom-select, header .searchbar {
 }
 
 #cards-container .card {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   margin-top: 5vh;
   padding-top: 3%;
 }
@@ -174,7 +175,7 @@ header .custom-select, header .searchbar {
 
 #image-break {
   position: relative;
-  height: 70vh;
+  height: 40vh;
   background-image: url("../images/iomBackgroundDark.jpg");
   background-size: cover;
   background-position: center;
@@ -194,10 +195,11 @@ header .custom-select, header .searchbar {
 }
 
 #image-break #footer-block {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
   position: absolute;
   bottom: 2%;
+  padding-bottom: 1vh;
   left: 25%;
   width: 50%;
 }
@@ -207,6 +209,214 @@ header .custom-select, header .searchbar {
     width: 80%;
     left: 10%;
   }
+}
+
+.custom-select, .searchbar {
+  height: 45px;
+}
+
+#search-header {
+  padding: 0;
+  background-image: url("../images/path.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#search-container {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+  background-color: #f0f0f0;
+  padding: 1%;
+  margin-top: 2vh;
+  max-width: 60%;
+  border-radius: 0.25em;
+}
+
+@media only screen and (max-width: 768px) {
+  #search-container {
+    max-width: 94%;
+  }
+}
+
+#search-container svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+#search-container .btn-tertiary {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+#search-container #loadingText {
+  font-size: 1.2em;
+}
+
+#search-container #errorText {
+  font-size: 1.2em;
+  color: red;
+}
+
+#diagonal-search {
+  z-index: 999;
+  background: #f0f0f0;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(51%, #f0f0f0));
+  background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 50%, #f0f0f0 51%);
+  height: 15vh;
+  width: 100%;
+  padding: -3vw;
+  margin: 0;
+}
+
+#results-container {
+  background-color: #f0f0f0;
+}
+
+#results {
+  background-color: #f0f0f0;
+}
+
+#results .card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+  min-width: 27%;
+  margin-top: 5vh;
+}
+
+@media only screen and (max-width: 992px) {
+  #results .card {
+    min-width: 31%;
+  }
+}
+
+#results .card .card-img-top {
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background: #2ed06e;
+  /* background: linear-gradient(180deg, $complimentaryColour 0%, $mainColour 50%, rgba(253,187,45,0) 100%); */
+}
+
+:root {
+  --purple: #007bff;
+  --red: #2ed06e;
+}
+
+/* Cookie Dialog */
+#gdpr-cookie-message {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  max-width: 375px;
+  background-color: var(--purple);
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+  margin-left: 30px;
+  font-family: system-ui;
+}
+
+@media only screen and (max-width: 768px) {
+  #gdpr-cookie-message {
+    max-width: 100%;
+    width: 100%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-left: 0;
+  }
+}
+
+#gdpr-cookie-message h4 {
+  color: var(--red);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#gdpr-cookie-message h5 {
+  color: var(--red);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#gdpr-cookie-message p, #gdpr-cookie-message ul {
+  color: white;
+  font-size: 15px;
+  line-height: 1.5em;
+}
+
+#gdpr-cookie-message p:last-child {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+#gdpr-cookie-message li {
+  width: 49%;
+  display: inline-block;
+}
+
+#gdpr-cookie-message a {
+  color: var(--red);
+  text-decoration: none;
+  font-size: 15px;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.75);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#gdpr-cookie-message a:hover {
+  color: white;
+  border-bottom-color: var(--red);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#gdpr-cookie-message button,
+button#ihavecookiesBtn {
+  border: none;
+  background: var(--red);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  padding: 7px;
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#gdpr-cookie-message button:hover {
+  background: white;
+  color: var(--red);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+button#gdpr-cookie-advanced {
+  background: white;
+  color: var(--red);
+}
+
+#gdpr-cookie-message button:disabled {
+  opacity: 0.3;
+}
+
+#gdpr-cookie-message input[type="checkbox"] {
+  float: none;
+  margin-top: 0;
+  margin-right: 5px;
 }
 
 html {
@@ -221,5 +431,16 @@ html {
 .btn-success {
   background-color: #2ed06e !important;
   border-color: #2ed06e !important;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+h4, h3 {
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

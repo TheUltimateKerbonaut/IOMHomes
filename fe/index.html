@@ -21,6 +21,9 @@
 	<!-- Custom CSS -->
 	<link href="styles/style.css" rel="stylesheet">
 
+	<!-- Google analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145086170-1"></script>
+
 </head>
 
 <body>
@@ -37,11 +40,11 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto mr-3">
 				<li class="nav-item active">
-					<a class="text-center nav-link nav-link-active text-white" href="#">Home <span
+					<a class="text-center nav-link nav-link-active text-white" href="#">Home<span
 							class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="text-center nav-link nav-link-fade text-white" href="about.html">About our data</a>
+					<a class="text-center nav-link nav-link-fade text-white" href="search.html">Search</a>
 				</li>
 			</ul>
 		</div>
@@ -58,14 +61,8 @@
 
 					<p class="sm-hide mt-4 d-none d-md-block">
 
-<<<<<<< Updated upstream
-						We make viewing historical house data easy and convient with our precise data. Gathering data from multiple sources,
-						we ensure maximum coverage and accuracy. A variety of interactive statistics and metrics are also available.
-=======
 						We make viewing historical real estate statistics easy and convient with our precise data. Gathering information
-						from our goverment, we ensure maximum coverage and accuracy with variety of interactive statistics and metrics 
-						also are available.
->>>>>>> Stashed changes
+						from our goverment, we ensure maximum coverage and accuracy, whilst providing a variety of interactive statistics and metrics as well.
 
 					</p>
 
@@ -85,7 +82,7 @@
 
 
 					<input class="mb-3 searchbar form-control" type="text" placeholder="123 Example Street"
-						aria-label="Search">
+						aria-label="Search" id="searchbar">
 
 					<select class="mb-3 browser-default custom-select" id="townDropdown">
 						<option selected="">Town (N/A)</option>
@@ -97,40 +94,38 @@
 						<option value="Peel">Peel</option>
 					</select>
 
-					<select class="mb-3 browser-default custom-select" id="townDropdown">
-						<option selected="">Town (N/A)</option>
-						<option value="Douglas">Douglas</option>
-						<option value="Onchan">Onchan</option>
-						<option value="Ramsey">Ramsey</option>
-						<option value="Castletown">Castletown</option>
-						<option value="Port%20Erin">Port Erin</option>
-						<option value="Peel">Peel</option>
+					<select class="mb-3 browser-default custom-select" id="priceDropdown">
+						<option selected>Price range (N/A)</option>
+						<option value="£0 - £100,000">£0 - £100,000</option>
+						<option value="£100,000 - £250,000">£100,000 - £250,000</option>
+						<option value="£250,000 - £500,000">£250,000 - £500,000</option>
+						<option value="£500,000 - £1,000000">£500,000 - £1,000,000</option>
+						<option value="£1,000000 - £999,999999999">£1,000,000+</option>
 					</select>
 
-					<select class="mb-3 browser-default custom-select" id="townDropdown">
-						<option selected="">Town (N/A)</option>
-						<option value="Douglas">Douglas</option>
-						<option value="Onchan">Onchan</option>
-						<option value="Ramsey">Ramsey</option>
-						<option value="Castletown">Castletown</option>
-						<option value="Port%20Erin">Port Erin</option>
-						<option value="Peel">Peel</option>
+					<select class="mb-3 browser-default custom-select date-picker" id="yearDropdown">
+						<option selected>Year sold (N/A)</option>
+						<option value="1">2019</option>
+						<option value="2">2018</option>
+						<option value="3">2017</option>
 					</select>
 
-					<a href="#" class="text-white font-weight-bold mt-3 btn btn-lg btn-success btn-tertiary">
+					<button onClick="searchNow()" class="text-white font-weight-bold mt-3 btn btn-lg btn-success btn-tertiary">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 							<path fill-rule="evenodd"
 								d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" />
 						</svg>
-						<span class="ml-2"></span>Search now
-					</a>
+						<span class="ml-2">Search now</span>
+					</button>
 
 				</div>
 
 				<div class="col-md-6 d-md-none">
 					<p class="mt-2 sm-hide mt-4 text-center text-md-left">
-						We make viewing historical house data easy and convient with our precise data. Gathering data from multiple sources,
-						we ensure maximum coverage and accuracy. A variety of interactive statistics and metrics are also available.
+						We make viewing historical house data easy and convient with our precise data. Gathering data
+						from multiple sources,
+						we ensure maximum coverage and accuracy. A variety of interactive statistics and metrics are
+						also available.
 					</p>
 				</div>
 
@@ -199,10 +194,10 @@
 
 				<div class="card">
 
-					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="16" viewBox="0 0 256.000000 227.000000" preserveAspectRatio="xMidYMid meet">
-						<g transform="translate(0.000000,227.000000) scale(0.100000,-0.100000)"
-						stroke="none">
-						<path d="M928 2232 c-33 -28 -65 -44 -115 -57 -90 -24 -228 -84 -334 -145 -48
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="16" viewBox="0 0 256.000000 227.000000"
+						preserveAspectRatio="xMidYMid meet">
+						<g transform="translate(0.000000,227.000000) scale(0.100000,-0.100000)" stroke="none">
+							<path d="M928 2232 c-33 -28 -65 -44 -115 -57 -90 -24 -228 -84 -334 -145 -48
 							-28 -94 -50 -103 -50 -40 0 -95 36 -197 130 -97 90 -114 101 -142 98 -29 -3
 							-32 -6 -35 -40 -5 -64 15 -114 73 -176 56 -61 115 -164 115 -202 0 -11 11 -32
 							24 -45 l24 -24 -34 -11 c-45 -15 -43 -34 5 -48 33 -10 40 -17 45 -47 8 -42 18
@@ -226,20 +221,16 @@
 							22 11 -20 -11 -96 -41 -137 -32 -47 -115 -227 -139 -305 -12 -37 -21 -95 -21
 							-128 l0 -60 -42 25 c-24 13 -101 55 -173 92 -71 37 -135 72 -142 77 -7 5 -19
 							35 -28 66 -34 117 -114 319 -149 377 -20 33 -44 84 -53 114 -8 31 -29 69 -48
-							90 -33 36 -35 36 -123 39 l-89 4 -45 -40z"/>
+							90 -33 36 -35 36 -123 39 l-89 4 -45 -40z" />
 						</g>
 					</svg>
-				
+
 					<div class="card-body">
 
 						<h4 class="text-center">100% Manx</h4>
 						<p class="text-center">
-<<<<<<< Updated upstream
-							Our website is meant entirely for Manx houses, and as such we deliver a highly tailored and local experience.
-=======
 							Our website is meant entirely for Manx residents, and as such we deliver a highly tailored and very
 							local experience.
->>>>>>> Stashed changes
 						</p>
 
 					</div>
@@ -277,7 +268,8 @@
 						<p class="text-center">
 							We have over 23,000 entries in our dataset, with virtually flawless
 							coverage, and provide
-							<a href="" onclick="alert('I should get round to adding this!');">API endpoints</a> to those who wish to use our data elsewhere.
+							<a href="" onclick="alert('I should get round to adding this!');">API endpoints</a> to those
+							who wish to use our data elsewhere.
 						</p>
 
 					</div>
@@ -358,39 +350,24 @@
 
 		<div id="diagonal"></div>
 
-		<div class="container text-center">
-<<<<<<< Updated upstream
-				<div class="card-deck" id="footer-block">
-					<div class="card">
-						<div class="card-body">
-	
-							<span class="font-weight-normal">
-								Should you wish to contact us, please do not
-								hesitate to email us at <i>contact@housedata.im</i>
-							</span><br />
-	
-							<span>&copy;2019 Housedata.im</span><br />
-							<a href="http://www.seamlesssoftware.im">Website by Seamless Software</a>
-	
-						</div>
-	
-=======
+		<div class="container text-center">	
 			<div class="card-deck" id="footer-block">
 				<div class="card">
 					<div class="card-body">
 
 						<span class="font-weight-normal">
 							Should you wish to contact us, please do not
-							hesitate to get in touch with us <i>contact@housedata.im</i>
+							hesitate to get in touch with us at <i>contact@housedata.im</i>
 						</span><br />
 
 						<span>&copy;2019 Housedata.im</span><br />
 						<a href="http://www.seamlesssoftware.im">Website by Seamless Software</a>
 
->>>>>>> Stashed changes
 					</div>
+
 				</div>
 			</div>
+		</div>
 
 	</div>
 
@@ -412,6 +389,36 @@
 
 	<!-- Navbar -->
 	<script src="js/navbarScroll.js"></script>
+
+	<script src="js/datepicker.js"></script>
+	<script>
+
+		$('.date-picker').yearselect();
+
+		$('.date-picker').yearselect({
+			start: 1970,
+			end: new Date().getFullYear() + 1, // 1 year ahead to allow for default value
+			step: 1,
+			order: 'desc',
+			selected: "Year (N/A)",
+			formatDisplay: function (yr) { return (yr == new Date().getFullYear() + 1 ? "Year (N/A)" : yr) },
+			displayAsValue: true
+		});
+
+	</script>
+
+	<script src="js/search.js"></script>
+	<script>
+	
+		document.getElementById("searchbar").onkeydown = function(e) {
+			if (e.keyCode == 13)
+				searchNow();
+		};
+
+	</script>
+
+	<script src="js/jquery.ihavecookies.min.js"></script>
+	<script src="js/cookies.js"></script>
 
 </body>
 

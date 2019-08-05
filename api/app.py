@@ -24,9 +24,11 @@ def home():
     entries = []
 
     for entry in data:
+        added = False
         for row in entry:
-            if search == None or (search.lower().replace(" ", "") in str(entry[row]).lower().replace(" ", "") and row != "placeID"):
+            if added == False and (search == None or (search.lower().replace(" ", "") in str(entry[row]).lower().replace(" ", "") and row != "placeID")):
                 entries.append(entry)
+                added = True
 
     # Check if entries match dropdown criteria
     town = request.args.get('town')

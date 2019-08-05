@@ -1,3 +1,8 @@
+function numberWithCommas(x)
+{
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function search()
 {
 
@@ -121,7 +126,7 @@ function getHTMLForEntry(entry)
                 <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p>\
                 <p class="results-text">Registered date: ' + entry.registered_date + '</p>\
                 <p class="results-text">Consideration: ' + entry.consideration + '</p>\
-                <p class="results-text">Market value: ' + entry.market_value + '</p>\
+                <p class="results-text">Market value: £' + numberWithCommas(entry.market_value) + '</p>\
                 <p class="results-text">Postcode: ' + entry.postcode + '</p>\
                 <p class="results-text">Town: ' + entry.town + '</p>\
                 <p class="results-text">Parish: ' + entry.parish + '</p>\

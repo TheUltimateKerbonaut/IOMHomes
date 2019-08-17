@@ -1,3 +1,7 @@
+p {
+  font-family: "Verdana", "Geneva", sans-serif !important;
+}
+
 .custom-toggler .navbar-toggler-icon {
   color: white;
   fill: white;
@@ -58,7 +62,6 @@ header h1 {
   font-family: "Rubik", sans-serif;
   font-weight: bold;
   font-size: 2em;
-  text-shadow: 2px 2px black;
 }
 
 @media only screen and (max-width: 576px) {

@@ -3,7 +3,7 @@ $backgroundColour: rgb(236, 236, 236);
 $fontLarge: "Rubik", sans-serif;
 $sizeLarge: 2.5em;
 
-$fontSmall: "Verdana", "Geneva", sans-serif;
+$fontMedium: "Verdana", "Geneva", sans-serif;
 $sizeMedium: 2.0em;
 
 $fontSmall: "Verdana", "Geneva", sans-serif;
@@ -51,4 +51,9 @@ $lg: 1200px;
     {
         @content;
     }
+}
+
+p
+{
+    font-family: $fontSmall !important;
 }

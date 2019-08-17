@@ -1,5 +1,6 @@
 p {
-  font-family: "Verdana", "Geneva", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1em;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -75,7 +76,7 @@ header b {
 }
 
 header p {
-  font-family: "Verdana", "Geneva", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1em;
   line-height: 1.6em;
 }

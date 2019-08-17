@@ -3,10 +3,10 @@ $backgroundColour: rgb(236, 236, 236);
 $fontLarge: "Rubik", sans-serif;
 $sizeLarge: 2.5em;
 
-$fontMedium: "Verdana", "Geneva", sans-serif;
+$fontMedium: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 $sizeMedium: 2.0em;
 
-$fontSmall: "Verdana", "Geneva", sans-serif;
+$fontSmall: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 $sizeSmall: 1em;
 
 $mainColour: #007bff;
@@ -56,4 +56,5 @@ $lg: 1200px;
 p
 {
     font-family: $fontSmall !important;
+    font-size: $sizeSmall !important;
 }

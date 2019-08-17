@@ -55,6 +55,6 @@ $lg: 1200px;
 
 p
 {
-    font-family: $fontSmall;
-    font-size: $sizeSmall;
+    font-family: $fontSmall !important;
+    font-size: $sizeSmall !important;
 }

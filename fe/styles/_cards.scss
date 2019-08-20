@@ -37,5 +37,31 @@ $cardBackgroundColour: rgb(240, 240, 240);
         }
     }
 
+    .altcard
+    {
+        box-shadow: $shadow;
+
+        margin-top: 5vh;
+        padding-top: 3%;
+        
+        @include sm-down
+        {
+            min-width: 90%;
+        }
+
+        svg
+        {
+            width: auto;
+            height: 100px;    
+
+            fill: url(#card-gradient) $altComplimentaryColour;
+        }
+
+        p:not(a)
+        {
+            color: rgb(100, 100, 100);
+        }
+    }
+
     background: $cardBackgroundColour;
 }

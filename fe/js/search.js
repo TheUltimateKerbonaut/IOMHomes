@@ -116,8 +116,11 @@ function getHTMLForEntry(entry)
     if (entry.registered_date == "" || entry.registered_date == undefined) entry.registered_date = "N/A"
     if (entry.parish == "" || entry.parish == undefined) entry.parish = "N/A"
 
+    thisStyle = 'card'
+    if ( entry.acquisition_date(entry.acquisition_date.length-4) == '2008' ) thisStyle = 'altcard'
+
     var html = '\
-        <div class="card">\
+        <div class="' + thisStyle + '">\
 \
             <h4 class="card-img-top text-left text-center">' + entry.address + '</h4>\
 \

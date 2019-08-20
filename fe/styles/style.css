@@ -177,6 +177,29 @@ header .custom-select, header .searchbar {
   color: #646464;
 }
 
+#cards-container .altcard {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+  margin-top: 5vh;
+  padding-top: 3%;
+}
+
+@media only screen and (max-width: 768px) {
+  #cards-container .altcard {
+    min-width: 90%;
+  }
+}
+
+#cards-container .altcard svg {
+  width: auto;
+  height: 100px;
+  fill: url(#card-gradient) #FFd06e;
+}
+
+#cards-container .altcard p:not(a) {
+  color: #646464;
+}
+
 #image-break {
   position: relative;
   height: 40vh;

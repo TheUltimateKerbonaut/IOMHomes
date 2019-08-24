@@ -92,6 +92,30 @@ function handleResult()
     for (var i = 0; i < dataSize; i++)
         document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i])
 
+    // Colour presets
+    let colours = [
+        "#2ed06e",
+        "#007bff",
+        "red",
+        "pink"
+    ]
+
+    // Get all cards
+    for(var i = 0; i < document.getElementsByClassName("card").length-1; i++)
+    {
+        // Get card
+        let card = document.getElementsByClassName("card")[i]
+
+        // Get aquisition date
+        let year = card.children[1].children[0].innerHTML.substr(card.children[1].children[0].innerHTML.length-4)
+
+        // Set colour
+        console.log(colours[year %= colours.length])
+        year %= colours.length
+        
+        card.children[0].style.backgroundColor = colours[year]
+    }
+
     $('#results').fadeIn(1500, "linear");
     zenscroll.to(document.getElementById("results"))
     

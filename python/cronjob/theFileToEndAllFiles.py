@@ -62,3 +62,6 @@ if isURLValid(url) == False:
 
 # Download data
 downloadData(url)
+
+# Convert to JSON
+import json_convert

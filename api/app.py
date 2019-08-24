@@ -75,7 +75,7 @@ def home():
     if (len(correctEntries) == 0):
         return "[{\"error\": \"There are no results\"}]"
 
-    correctEntries.sort(key=lambda x: datetime.datetime.strptime(x['registered_date'], '%d/%m/%Y'))
+    correctEntries.sort(key=lambda x: datetime.datetime.strptime(x['acquisition_date'], '%d/%m/%Y'))
     correctEntries.reverse()
     return jsonify(correctEntries)
 

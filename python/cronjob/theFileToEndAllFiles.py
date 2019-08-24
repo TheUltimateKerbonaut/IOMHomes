@@ -9,11 +9,12 @@ import requests
 import sys
 
 def isURLValid(url):
-    try:  
+    try:
         response = request.urlopen(url)
         csv = response.read()
         return True
-    except:
+    except Exception as e:
+        print(e)
         return False
 
 def downloadData(url):
@@ -65,3 +66,4 @@ downloadData(url)
 
 # Convert to JSON
 import json_convert
+json_convert()

@@ -28,6 +28,6 @@ for entry in data:
 
 stats(data)
 
-file = open("data.json", "w")
+file = open("cron_data.json", "w")
 file.write(json.dumps(data, indent=4)) # the indent option makes it have nice formatting - larger file sizes but more human readable
 file.close()

@@ -11,6 +11,36 @@ def getPercentOfKey(data, key):
     value = entriesCompleted / entrySize * 100
     return (int(value*100) / 100)
 
+import sys # For flush
+
+def housesPerYear():
+
+    data_file = open("../../data.json", "r")
+    data = {}
+    data = json.load(data_file)
+
+    years = {}
+
+    for entry in data:
+        year = entry["acquisition_date"][-4:]
+        try:
+            years[year] = str(int(years[year]) + 1)
+        except:
+            years[year] = 0
+            years[year] = str(int(years[year]) + 1)
+
+    for year in years:
+        print(year + ": " + years[year])
+
+    sys.stdout.write("[")
+    for year in years:
+        if (int(year) >= 2000):
+            sys.stdout.write(years[year] + ", ")
+    sys.stdout.write("]")
+    sys.stdout.flush()
+
+housesPerYear()
+
 def stats(data):
 
     print("\n/////// Data statistics \\\\\\\\\\\\\\\n")

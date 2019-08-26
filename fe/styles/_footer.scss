@@ -10,10 +10,21 @@
 
         padding: -3vw;
         margin:0;
+
+        @include md-down
+        {
+            height: 10vh;
+        }
     }
 
     position: relative;
     height: 40vh;
+
+    @include xxs-down
+    {
+        height: 60vh;
+    }
+
     background-image: url("../images/iomBackgroundDark.jpg");
     background-size: cover;
     background-position: center;
@@ -22,6 +33,7 @@
 
     #footer-block
     {
+
         box-shadow: $shadow;
         position: absolute;
         bottom: 2%;

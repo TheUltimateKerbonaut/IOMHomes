@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="housedata.im - Searchable Manx house data">
+	<meta name="description" content="housedata.im - Searchable Manx house transaction data">
 	<meta name="keywords" content="Manx,house,data,search">
 	<meta name="author" content="seamlesssoftware.im">
 
@@ -61,8 +61,8 @@
 
 					<p class="sm-hide mt-4 d-none d-md-block">
 
-						We make viewing historical real estate statistics easy and convient with our precise data. Gathering information
-						from our goverment, we ensure maximum coverage and accuracy, whilst providing a variety of interactive statistics and metrics as well.
+						We make viewing land transactions easy and convient with our free data. Gathering information
+						from our goverment, we ensure maximum coverage and accuracy.
 
 					</p>
 
@@ -110,7 +110,8 @@
 						<option value="3">2017</option>
 					</select>
 
-					<button onClick="searchNow()" class="text-white font-weight-bold mt-3 btn btn-lg btn-success btn-tertiary">
+					<button onClick="searchNow()"
+						class="text-white font-weight-bold mt-3 btn btn-lg btn-success btn-tertiary">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 							<path fill-rule="evenodd"
 								d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" />
@@ -143,9 +144,9 @@
 
 				<div class="col">
 
-					<h1 class="text-center">Interact with our data</h1>
+					<h1 class="pt-2 text-center">Packed with data</h1>
 					<p class="text-center">
-						Use our online tool to quickly view a wide range of metrics and statistics.
+						Our data has over 23,000 entries.
 					</p>
 
 					<span id="text">Houses sold</span>
@@ -166,10 +167,9 @@
 
 		</div>
 
-		<div id="bottom-text" class="row mt-5 mb-5 pt-2 pb-3">
+		<div id="bottom-text" class="row mt-5 mb-1 pt-2 pb-3">
 			<div class="col text-center">
-				<a href="#" class="text-center text-white font-weight-bold btn btn-lg btn-success btn-tertiary">See more
-					of our graphs</a>
+
 			</div>
 		</div>
 
@@ -229,7 +229,8 @@
 
 						<h4 class="text-center">100% Manx</h4>
 						<p class="text-center">
-							Our website is meant entirely for Manx residents, and as such we deliver a highly tailored and very
+							Our website is meant entirely for Manx residents, and as such we deliver a highly tailored
+							and very
 							local experience.
 						</p>
 
@@ -268,7 +269,7 @@
 						<p class="text-center">
 							We have over 23,000 entries in our dataset, with virtually flawless
 							coverage, and provide
-							<a href="" onclick="alert('I should get round to adding this!');">API endpoints</a> to those
+							<button class="btn bg-transparent" id="apiEndpoint">API endpoints</button> to those
 							who wish to use our data elsewhere.
 						</p>
 
@@ -346,18 +347,29 @@
 
 	</div>
 
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p class="mt-3">If you would like to use our data, with API endpoints or otherwise, please contact us at <a href="mailto:contact@housedata.im"><i>contact@housedata.im</i></a></p>
+		</div>
+
+	</div>
+
 	<div class="contianer-fluid" id="image-break">
 
 		<div id="diagonal"></div>
 
-		<div class="container text-center">	
+		<div class="container text-center">
 			<div class="card-deck" id="footer-block">
 				<div class="card">
 					<div class="card-body">
 
 						<span class="font-weight-normal">
 							Should you wish to contact us, please do not
-							hesitate to get in touch at <i>contact@housedata.im</i>
+							hesitate to get in touch at <a href="mailto:contact@housedata.im"><i>contact@housedata.im</i></a>
 						</span><br />
 
 						<span>&copy;2019 Housedata.im</span><br />
@@ -390,6 +402,8 @@
 	<!-- Navbar -->
 	<script src="js/navbarScroll.js"></script>
 
+	<script src="js/dialog.js"></script>
+
 	<script src="js/datepicker.js"></script>
 	<script>
 
@@ -409,8 +423,8 @@
 
 	<script src="js/search.js"></script>
 	<script>
-	
-		document.getElementById("searchbar").onkeydown = function(e) {
+
+		document.getElementById("searchbar").onkeydown = function (e) {
 			if (e.keyCode == 13)
 				searchNow();
 		};

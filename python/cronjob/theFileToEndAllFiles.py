@@ -128,3 +128,5 @@ json_data = json.loads(file_data) # store in json structure
 json_string = json.dumps(json_data, separators=(',', ':')) # Compact JSON structure
     
 open("new_data.json", "w+", 1).write(json_string) # open and write json_string to file
+
+print("Successfully updated file new_data.json")

@@ -1,11 +1,13 @@
 #!/bin/bash
 echo "Beginning cronjob"
 
+source /home/housedata/virtualenv/api/3.7/bin/activate
+
 cd /home/housedata/cronUpdate # Go into directory
 
-/usr/bin/python3 theFileToEndAllFiles.py # Run python script
+/home/housedata/virtualenv/api/3.7/bin/python theFileToEndAllFiles.py # Run python script
 
-rm /home/housedata/api/data.json # Get rid of old data
+#rm /home/housedata/api/data.json # Get rid of old data
 
 mv new_data.json /home/housedata/api/data.json # Replace with new data
 

@@ -1,4 +1,4 @@
-from urllib import request # URL downloading
+from urllib2 import urlopen # URL downloading
 from datetime import datetime # For getting the date
 from datetime import time
 from time import gmtime
@@ -10,7 +10,7 @@ import sys
 
 def isURLValid(url):
     try:
-        response = request.urlopen(url)
+        response = urlopen(url)
         csv = response.read()
         return True
     except Exception as e:

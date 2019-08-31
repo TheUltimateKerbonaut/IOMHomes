@@ -66,6 +66,24 @@ def home():
 
         correctEntries.append(entries[i])
 
+    # Group by properties
+    correctEntries.sort(key=lambda x: x['address']) # Orgnanise by address
+    finalList = [] # Create new list
+    lastAddress = "" # Keep track of last address
+    masterIndex = -1 # Index of current master
+    for entry in correctEntries: 
+        if entry["address"] != lastAddress:
+            x = []
+            x.append(entry)
+            finalList.append(x)
+            masterIndex += 1
+        else:
+            finalList[masterIndex].append(entry)
+        
+        lastAddress = entry["address"]
+        
+
+
     # Protect against someone supplying no paremeters and getting all our data
     # by limiting entries to X long!
     if len(correctEntries) > 200:
@@ -75,9 +93,13 @@ def home():
     if (len(correctEntries) == 0):
         return "[{\"error\": \"There are no results\"}]"
 
-    correctEntries.sort(key=lambda x: datetime.datetime.strptime(x['acquisition_date'], '%d/%m/%Y'))
-    correctEntries.reverse()
-    return jsonify(correctEntries)
+    # Organise masters by house number and master's entries by acquisition date
+    finalList.sort(key=lambda x: x[0]["house_no"])
+
+    for master in finalList:
+        master.sort(key=lambda x: datetime.datetime.strptime(x['acquisition_date'], '%d/%m/%Y'))
+        master.reverse()
+    return jsonify(finalList)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

@@ -48,7 +48,7 @@ function search()
     document.getElementById("loadingText").innerHTML = "Loading..."
 
 	var request = new XMLHttpRequest()
-	request.open('GET', 'https://housedata.im/api/' + query, true)
+	request.open('GET', 'http://localhost:5000/' + query, true)
 	request.onload = handleResult
     request.send()
 }
@@ -90,7 +90,11 @@ function handleResult()
     document.getElementById("results-js").innerHTML = ""
 
     for (var i = 0; i < dataSize; i++)
-        document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i])
+    {  
+        document.getElementById("results-js").innerHTML += getHTMLForMaster(data[i])
+        for (var j = 0; j < data[i].length; j++)
+            document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i][j])
+    }
 
     // Colour presets
     let colours = [
@@ -128,6 +132,11 @@ function getDropdownQuery(id)
 	var dropdownQuery = dropdownText.includes("N/A") ? "" : dropdownText
 
 	return dropdownQuery
+}
+
+function getHTMLForMaster(master)
+{
+
 }
 
 function getHTMLForEntry(entry)

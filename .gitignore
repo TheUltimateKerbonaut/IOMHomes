@@ -13,3 +13,4 @@ python/postcodes/data.rar
 *.pyc
 *.pyc
 python/initial-processing/__pycache__/stats.cpython-36.pyc
+api/data.json

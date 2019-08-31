@@ -60,7 +60,7 @@ function handleResult()
     document.getElementById("results-js").innerHTML = ""
 
 	var data = JSON.parse(this.response)
-    
+
     document.getElementById("loadingText").innerHTML = ""
     
     // Check if error occured
@@ -84,18 +84,18 @@ function handleResult()
         }
         return size;
     };
-    let dataSize = Object.size(data);
-    document.getElementById("resultsNumber").textContent = "Found " + dataSize + " entries"
+
+    document.getElementById("resultsNumber").textContent = "Found " + data.length + " entries"
 
     document.getElementById("results-js").innerHTML = ""
 
-    for (var i = 0; i < dataSize; i++)
-    {  
-        document.getElementById("results-js").innerHTML += getHTMLForMaster(data[i])
-        for (var j = 0; j < data[i].length; j++)
-            document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i][j])
-    }
+    // Display data
+    for (var i = 0; i < data.length; i++)
+        document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i][data[i].length-1])
 
+    $('.card-img-top').equalHeights();
+
+    /*
     // Colour presets
     let colours = [
         "#2ed06e",
@@ -119,6 +119,7 @@ function handleResult()
         
         card.children[0].style.backgroundColor = colours[year]
     }
+    */
 
     $('#results').fadeIn(1500, "linear");
     zenscroll.to(document.getElementById("results"))
@@ -132,11 +133,6 @@ function getDropdownQuery(id)
 	var dropdownQuery = dropdownText.includes("N/A") ? "" : dropdownText
 
 	return dropdownQuery
-}
-
-function getHTMLForMaster(master)
-{
-
 }
 
 function getHTMLForEntry(entry)
@@ -156,13 +152,8 @@ function getHTMLForEntry(entry)
 \
             <div class="card-body text-center">\
 \
-                <p class="results-text">Acquisition date: ' + entry.acquisition_date + '</p>\
-                <p class="results-text">Registered date: ' + entry.registered_date + '</p>\
-                <p class="results-text">Consideration: ' + entry.consideration + '</p>\
-                <p class="results-text">Market value: £' + numberWithCommas(entry.market_value) + '</p>\
-                <p class="results-text">Postcode: ' + entry.postcode + '</p>\
-                <p class="results-text">Town: ' + entry.town + '</p>\
-                <p class="results-text">Parish: ' + entry.parish + '</p>\
+                <span class="results-text">Town: ' + entry.town + '</span><br/><span class="results-text">Postcode: ' + entry.postcode + '</span>\
+                <button class="mt-2 card-button btn btn-primary">View history</button></div>\
 \
             </div>\
 \

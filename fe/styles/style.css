@@ -59,6 +59,12 @@ header {
   }
 }
 
+@media only screen and (max-width: 992px) {
+  header {
+    background-attachment: scroll;
+  }
+}
+
 header h1 {
   font-family: "Rubik", sans-serif;
   font-weight: bold;
@@ -179,6 +185,26 @@ header .custom-select, header .searchbar {
 
 #cards-container .card p:not(a) {
   color: #646464;
+}
+
+.results-text {
+  color: #646464;
+}
+
+.card-button {
+  width: 100%;
+  margin-bottom: 1vh;
+}
+
+.card-body {
+  padding-top: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0;
+}
+
+.card-img-top {
+  min-height: 10.6vh;
 }
 
 #image-break {

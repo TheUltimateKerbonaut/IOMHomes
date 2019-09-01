@@ -53,13 +53,15 @@ function search()
     request.send()
 }
 
+var data = {}
+
 function handleResult()
 {
 
     document.getElementById("resultsNumber").textContent = ""
     document.getElementById("results-js").innerHTML = ""
 
-	var data = JSON.parse(this.response)
+	data = JSON.parse(this.response)
 
     document.getElementById("loadingText").innerHTML = ""
     
@@ -91,7 +93,7 @@ function handleResult()
 
     // Display data
     for (var i = 0; i < data.length; i++)
-        document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i][data[i].length-1])
+        document.getElementById("results-js").innerHTML += getHTMLForEntry(data[i][0], i)
 
     $('.card-img-top').equalHeights();
 
@@ -121,6 +123,7 @@ function handleResult()
     }
     */
 
+    document.getElementById("footer-block").style.position = "absoloute";
     $('#results').fadeIn(1500, "linear");
     zenscroll.to(document.getElementById("results"))
     
@@ -135,7 +138,7 @@ function getDropdownQuery(id)
 	return dropdownQuery
 }
 
-function getHTMLForEntry(entry)
+function getHTMLForEntry(entry, masterID)
 {
 
     if (entry.postcode == "" || entry.postcode == undefined) entry.postcode = "N/A"
@@ -153,7 +156,8 @@ function getHTMLForEntry(entry)
             <div class="card-body text-center">\
 \
                 <span class="results-text">Town: ' + entry.town + '</span><br/><span class="results-text">Postcode: ' + entry.postcode + '</span>\
-                <button class="mt-2 card-button btn btn-primary">View history</button></div>\
+\
+                <button class="mt-2 card-button btn btn-primary" onClick="displayModal(' + masterID + ');">View history</button></div>\
 \
             </div>\
 \
@@ -162,6 +166,33 @@ function getHTMLForEntry(entry)
     '
 
     return html
+}
+
+function setHTMLForModal(masterID)
+{
+    document.getElementById("modal-address").innerHTML = data[masterID][0].address;
+    document.getElementById("modal-number").innerHTML = "Sold " + data[masterID].length + " times";
+
+    document.getElementById("modal-list").innerHTML = "";
+    for (var i = 0; i < data[masterID].length; i++)
+    {
+        let entryString = '\
+        <li>\
+			<p>\
+				Acquisition date: ' + data[masterID][i].acquisition_date + '<br />\
+				Registered date: ' + data[masterID][i].registered_date + '<br />\
+				Consideration: ' + data[masterID][i].consideration + '<br />\
+				Market value: £' + numberWithCommas(data[masterID][i].market_value) + '<br />\
+				Postcode: ' + data[masterID][i].postcode + '<br />\
+				Town: ' + data[masterID][i].town + '<br />\
+				Parish: ' + data[masterID][i].parish + '\
+			</p>\
+        </li>\
+        ';
+
+        document.getElementById("modal-list").innerHTML += entryString;
+    }
+
 }
 
 // ------- Handle HTTP GET on index page  -------
@@ -203,3 +234,30 @@ function searchNow()
     else
         window.location = "search.html";
 }
+
+// Modal
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+function displayModal(masterID)
+{
+    modal.style.display = "block";
+    setHTMLForModal(masterID);
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+	modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+};

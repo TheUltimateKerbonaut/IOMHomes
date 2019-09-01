@@ -47,7 +47,18 @@ $cardBackgroundColour: rgb(240, 240, 240);
 
 .card-button 
 {
-    width: 100%;
+
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+
+    @include md-down
+    {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
     margin-bottom: 1vh;
 }
 

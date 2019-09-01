@@ -192,8 +192,18 @@ header .custom-select, header .searchbar {
 }
 
 .card-button {
-  width: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
   margin-bottom: 1vh;
+}
+
+@media only screen and (max-width: 992px) {
+  .card-button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 }
 
 .card-body {
@@ -240,21 +250,36 @@ header .custom-select, header .searchbar {
   }
 }
 
-#image-break #footer-block {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
-          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+#footer-block-index {
   position: absolute;
   bottom: 2%;
+  padding: 0;
   padding-bottom: 1vh;
   left: 25%;
   width: 50%;
 }
 
 @media only screen and (max-width: 992px) {
-  #image-break #footer-block {
+  #footer-block-index {
     width: 80%;
     left: 10%;
   }
+}
+
+#footer-block-index .card .card-body {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+  padding: 1%;
+}
+
+#footer-block {
+  width: 100%;
+}
+
+#footer-block .card .card-body {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+  padding: 1%;
 }
 
 .custom-select, .searchbar {

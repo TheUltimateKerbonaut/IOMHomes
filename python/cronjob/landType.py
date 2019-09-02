@@ -14,6 +14,8 @@ def landType(data):
             isHouse = "not_house"
         if ("land" in entry["street"] or "Land" in entry["street"]):
             isHouse = "not_house"
+        if ("Field" in entry["house_name"]):
+            isHouse = "not_house"
 
         # Add property_type key
         entry["isHouse"] = isHouse

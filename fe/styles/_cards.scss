@@ -39,3 +39,58 @@ $cardBackgroundColour: rgb(240, 240, 240);
 
     background: $cardBackgroundColour;
 }
+
+.results-text
+{
+    color: rgb(100, 100, 100);
+}
+
+.card-button 
+{
+
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+
+    @include md-down
+    {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    margin-bottom: 1vh;
+}
+
+.card-body
+{
+    padding-top: 0;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0;
+}
+
+.card-img-top
+{
+    min-height: 4.3em;
+}
+
+.modal-item
+{
+    background-color: $cardBackgroundColour;
+    box-shadow: $shadow;
+    padding: 1.25rem;
+
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    @include md-down
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    
+    margin-bottom: 2vh;
+}

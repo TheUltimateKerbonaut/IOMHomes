@@ -31,20 +31,45 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    #footer-block
+    
+}
+
+#footer-block-index
+{
+    position: absolute;
+    bottom: 2%;
+    padding: 0;
+    padding-bottom: 1vh;
+    left: 25%;
+    width: 50%;
+
+    @include md-down
     {
+        width: 80%;
+        left: 10%;
+    }
 
-        box-shadow: $shadow;
-        position: absolute;
-        bottom: 2%;
-        padding-bottom: 1vh;
-        left: 25%;
-        width: 50%;
-
-        @include md-down
+    .card
+    {
+        .card-body
         {
-            width: 80%;
-            left: 10%;
+            box-shadow: $shadow;
+            padding: 1%;
+        }
+    }
+}
+
+#footer-block
+{
+
+    width: 100%;
+
+    .card
+    {
+        .card-body
+        {
+            box-shadow: $shadow;
+            padding: 1%;
         }
     }
 }

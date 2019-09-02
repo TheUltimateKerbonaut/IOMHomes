@@ -74,3 +74,23 @@ $cardBackgroundColour: rgb(240, 240, 240);
 {
     min-height: 4.3em;
 }
+
+.modal-item
+{
+    background-color: $cardBackgroundColour;
+    box-shadow: $shadow;
+    padding: 1.25rem;
+
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    @include md-down
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    
+    margin-bottom: 2vh;
+}

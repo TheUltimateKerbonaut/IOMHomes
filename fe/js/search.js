@@ -48,7 +48,7 @@ function search()
     document.getElementById("loadingText").innerHTML = "Loading..."
 
 	var request = new XMLHttpRequest()
-	request.open('GET', 'http://localhost:5000/' + query, true)
+	request.open('GET', 'https://housedata.im/api/' + query, true)
 	request.onload = handleResult
     request.send()
 }
@@ -177,7 +177,7 @@ function setHTMLForModal(masterID)
     for (var i = 0; i < data[masterID].length; i++)
     {
         let entryString = '\
-        <li>\
+        <div class="modal-item">\
 			<p>\
 				Acquisition date: ' + data[masterID][i].acquisition_date + '<br />\
 				Registered date: ' + data[masterID][i].registered_date + '<br />\
@@ -187,7 +187,7 @@ function setHTMLForModal(masterID)
 				Town: ' + data[masterID][i].town + '<br />\
 				Parish: ' + data[masterID][i].parish + '\
 			</p>\
-        </li>\
+        </div>\
         ';
 
         document.getElementById("modal-list").innerHTML += entryString;

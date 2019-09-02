@@ -217,6 +217,25 @@ header .custom-select, header .searchbar {
   min-height: 4.3em;
 }
 
+.modal-item {
+  background-color: #f0f0f0;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+          box-shadow: 10px 10px 5px 0px rgba(1, 1, 1, 0.1);
+  padding: 1.25rem;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2vh;
+}
+
+@media only screen and (max-width: 992px) {
+  .modal-item {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+}
+
 #image-break {
   position: relative;
   height: 40vh;
@@ -307,6 +326,7 @@ header .custom-select, header .searchbar {
 
 @media only screen and (max-width: 768px) {
   #search-container {
+    padding: 4%;
     max-width: 94%;
   }
 }

@@ -105,16 +105,13 @@ function handleResult()
         "red",
         "pink"
     ]
-
     // Get all cards
     for(var i = 0; i < document.getElementsByClassName("card").length-1; i++)
     {
         // Get card
         let card = document.getElementsByClassName("card")[i]
-
         // Get aquisition date
         let year = card.children[1].children[0].innerHTML.substr(card.children[1].children[0].innerHTML.length-4)
-
         // Set colour
         console.log(colours[year %= colours.length])
         year %= colours.length
@@ -155,9 +152,15 @@ function getHTMLForEntry(entry, masterID)
 \
             <div class="card-body text-center">\
 \
-                <span class="results-text">Town: ' + entry.town + '</span><br/><span class="results-text">Postcode: ' + entry.postcode + '</span>\
+                <span class="results-text">Acquisition date: ' + entry.acquisition_date + '</span><br/>\
+                <span class="results-text">Registered date: ' + entry.registered_date + '</span><br/>\
+                <span class="results-text">Consideration: £' + numberWithCommas(entry.consideration) + '</span><br/>\
+                <span class="results-text">Market value: £' + numberWithCommas(entry.market_value) + '</span><br/>\
+                <span class="results-text">Postcode: ' + entry.postcode + '</span><br/>\
+                <span class="results-text">Town: ' + entry.town + '</span><br/>\
+                <span class="results-text">Parish: ' + entry.parish + '</span><br/>' + ((data[masterID].length == 1) ? "<br/>" : "")+ '\
 \
-                <button class="mt-2 card-button btn btn-primary" onClick="displayModal(' + masterID + ');">View history</button></div>\
+                ' + ((data[masterID].length > 1) ? '<button class="mt-2 card-button btn btn-primary" onClick="displayModal(' + masterID + ');">View history</button>' : "") + '</div>\
 \
             </div>\
 \
@@ -181,7 +184,7 @@ function setHTMLForModal(masterID)
 			<p>\
 				Acquisition date: ' + data[masterID][i].acquisition_date + '<br />\
 				Registered date: ' + data[masterID][i].registered_date + '<br />\
-				Consideration: ' + data[masterID][i].consideration + '<br />\
+				Consideration: £' + numberWithCommas(data[masterID][i].consideration) + '<br />\
 				Market value: £' + numberWithCommas(data[masterID][i].market_value) + '<br />\
 				Postcode: ' + data[masterID][i].postcode + '<br />\
 				Town: ' + data[masterID][i].town + '<br />\

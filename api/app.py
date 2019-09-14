@@ -35,7 +35,8 @@ def home():
     for entry in data:
         searchMatches = False
         for row in entry:
-            if searchMatches == False and (search == None or (search.lower().replace(" ", "").replace(",", "").replace("'", "") in str(entry[row]).lower().replace(" ", "") and row != "placeID")):
+            if searchMatches == False and (search == None or (search.lower().replace(" ", "").replace(",", "").replace("'", "") in str(entry[row]).lower().replace(" ", "").replace(",", "").replace("'", "") and row != "placeID")):
+                #return (search.lower().replace(" ", "").replace(",", "").replace("'", "") + " " + str(entry[row]).lower().replace(" ", "").replace(",", "").replace("'", ""))
                 searchMatches = True
 
         if searchMatches:

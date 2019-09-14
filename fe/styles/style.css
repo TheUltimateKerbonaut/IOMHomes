@@ -561,10 +561,13 @@ button#gdpr-cookie-advanced {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 @media only screen and (max-width: 992px) {
   .modal-content {
+    max-height: 70vh;
     width: 90%;
   }
 }

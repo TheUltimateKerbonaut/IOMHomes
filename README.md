@@ -1,2 +1,3 @@
 # IOMHomes
-Collection of scripts to deal with some data regarding Manx property
+Github repo for housedata.im
+https://www.housedata.im/

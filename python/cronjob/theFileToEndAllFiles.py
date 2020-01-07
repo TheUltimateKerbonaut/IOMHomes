@@ -38,8 +38,8 @@ def getDate():
 def getDateForURL():
 
     # Get values
-    day = str(gmtime().tm_mday - 10)
-    month = str(gmtime().tm_mon)
+    day = str(gmtime().tm_mday)
+    month = str(gmtime().tm_mon-1)
     year = str(gmtime().tm_year)
 
     # Add zeroes before them if too short

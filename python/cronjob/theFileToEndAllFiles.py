@@ -39,8 +39,14 @@ def getDateForURL():
 
     # Get values
     day = str(gmtime().tm_mday)
-    month = str(gmtime().tm_mon-1)
-    year = str(gmtime().tm_year)
+	year = gmtime().tm_year
+    month = gmtime().tm_mon-1
+	if (month == 0):
+		month = 12
+		year = year -1
+	year = str(year)
+	month = str(month)
+    
 
     # Add zeroes before them if too short
     if len(day) < 2:

@@ -15,7 +15,7 @@ def json_convert(file):
     # Go through each row of the file, as long as it isn't the first row (as those are the column names)
     line_count = 0
     for row in csv_reader:
-        if (line_count != 0):
+        if (line_count != 0 and len(row) != 1):
             row_data = {
                 "i": row[0],
                 "house_name": row[1],

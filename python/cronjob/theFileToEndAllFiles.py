@@ -54,7 +54,7 @@ def getDateForURL():
 print("Attempting to download data for date {} with code {}".format(getDate(), getDateForURL()))
 
 url = 'https://www.gov.im/media/1357981/dfe_csv_{}.csv'.format(getDateForURL())
-#url = 'https://www.gov.im/media/1357981/dfe_csv_01072019.csv'
+#url = 'https://www.gov.im/media/1357981/dfe_csv_01112019.csv'
 
 # Quit program if 404
 if isURLValid(url) == False:
